@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Lånekalken – Gratis lånekalkulator</title>
-  <meta name="description" content="Beregn månedlig betaling, totalkostnad og effektiv rente for boliglån, billån og forbrukslån. Full nedbetalingsplan med annuitetslån og serielån.">
+  <meta name="description" content="Beregn månedlig betaling, totalkostnad og effektiv rente for boliglån, billån og forbrukslån.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://lånekalken.no">
   <meta property="og:title" content="Lånekalken – Gratis lånekalkulator">
-  <meta property="og:description" content="Beregn månedlig betaling, totalkostnad og effektiv rente for boliglån, billån og forbrukslån. Full nedbetalingsplan med annuitetslån og serielån.">
+  <meta property="og:description" content="Beregn månedlig betaling, totalkostnad og effektiv rente for boliglån, billån og forbrukslån.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lånekalken.no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -221,13 +221,13 @@
     <button class="hamburger" id="hamburger" aria-label="Åpne meny"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<section class="hero"><h1>Et gratis verktøy for å få<br>oversikt over lån og kostnader</h1><p>Beregn månedlig betaling, totalkostnad og effektiv rente. Full nedbetalingsplan på sekunder.</p></section>
 <div class="top-banner-ad">
   <div class="ad-inner">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
     <span>Annonseplass – 728×90</span>
   </div>
-</div>
-<section class="hero"><h1>Et gratis verktøy for å få<br>oversikt over lån og kostnader</h1><p>Beregn månedlig betaling, totalkostnad og effektiv rente. Full nedbetalingsplan på sekunder.</p></section><div class="main-wrap">
+</div><div class="main-wrap">
 <aside class="ad-sidebar" aria-label="Annonse"><div class="ad-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>Annonse</span></div></aside>
 <main><div class="calc-section">
 <div class="calc-grid">
@@ -294,7 +294,7 @@
 </div></div></main>
 <aside class="ad-sidebar" aria-label="Annonse"><div class="ad-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>Annonse</span></div></aside>
 </div>
-<div class="content-wrap" style="max-width:100%;padding:32px 0 0">
+<div class="content-wrap">
   <h2>Hva er en lånekalkulator?</h2>
   <p>En lånekalkulator hjelper deg å forstå de reelle kostnadene ved et lån før du signerer. Du legger inn lånebeløp, rente, løpetid og gebyrer, og får umiddelbart svar på månedlig betaling, totalkostnad og effektiv rente. Mange fokuserer kun på nominell rente – det er en feil. Effektiv rente inkluderer alle gebyrer og er det eneste riktige sammenligningsgrunnlaget mellom banker.</p>
   <h2>Annuitetslån vs. serielån</h2>
@@ -426,30 +426,30 @@ function updateSliderFill(id) {
 
 let loanType = 'annuitet';
 function setType(t) {
-  loanType = t;
-  document.getElementById('togAnn').classList.toggle('active', t==='annuitet');
-  document.getElementById('togSer').classList.toggle('active', t==='serie');
+  loanType=t;
+  document.getElementById('togAnn').classList.toggle('active',t==='annuitet');
+  document.getElementById('togSer').classList.toggle('active',t==='serie');
   calculate();
 }
 function calculate() {
-  const tpy = parseInt(document.getElementById('tpy').value)||12;
-  const P = parseFloat(document.getElementById('loanAmt').value)||0;
-  const r = parseFloat(document.getElementById('rate').value)/100/tpy;
-  const n = ((parseInt(document.getElementById('yrs').value)||0)*12+(parseInt(document.getElementById('mths').value)||0))*tpy/12;
-  const fee = parseFloat(document.getElementById('termFee').value)||0;
-  const estFee = parseFloat(document.getElementById('estFee').value)||0;
-  const tingl = parseFloat(document.getElementById('tinglysning').value)||0;
-  const incl = document.getElementById('inclFees').checked;
-  const loanP = incl ? P+estFee+tingl : P;
-  if (!loanP||!n) return;
-  const sched = buildSchedule(loanP,r,n,fee,loanType);
-  const monthly = sched[0].payment;
-  const totalPay = sched.reduce((s,r)=>s+r.payment,0)+(incl?0:estFee+tingl);
-  document.getElementById('monthly').textContent = fmt(monthly);
-  document.getElementById('totalCost').textContent = fmt(totalPay-P);
-  document.getElementById('totalPay').textContent = fmt(totalPay);
-  document.getElementById('effRate').textContent = fmtPct(calcEff(P,monthly,n,incl?0:estFee+tingl));
-  document.getElementById('termCount').textContent = '('+n+' terminer)';
+  const tpy=parseInt(document.getElementById('tpy').value)||12;
+  const P=parseFloat(document.getElementById('loanAmt').value)||0;
+  const r=parseFloat(document.getElementById('rate').value)/100/tpy;
+  const n=((parseInt(document.getElementById('yrs').value)||0)*12+(parseInt(document.getElementById('mths').value)||0))*tpy/12;
+  const fee=parseFloat(document.getElementById('termFee').value)||0;
+  const estFee=parseFloat(document.getElementById('estFee').value)||0;
+  const tingl=parseFloat(document.getElementById('tinglysning').value)||0;
+  const incl=document.getElementById('inclFees').checked;
+  const loanP=incl?P+estFee+tingl:P;
+  if(!loanP||!n) return;
+  const sched=buildSchedule(loanP,r,n,fee,loanType);
+  const monthly=sched[0].payment;
+  const totalPay=sched.reduce((s,r)=>s+r.payment,0)+(incl?0:estFee+tingl);
+  document.getElementById('monthly').textContent=fmt(monthly);
+  document.getElementById('totalCost').textContent=fmt(totalPay-P);
+  document.getElementById('totalPay').textContent=fmt(totalPay);
+  document.getElementById('effRate').textContent=fmtPct(calcEff(P,monthly,n,incl?0:estFee+tingl));
+  document.getElementById('termCount').textContent='('+n+' terminer)';
   renderChart(sched); renderTable(sched);
 }
 ['loanAmt','rate','yrs','mths','termFee','estFee','tinglysning','tpy'].forEach(id=>{

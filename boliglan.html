@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Boliglånskalkulator – Beregn boliglån gratis | Lånekalken</title>
-  <meta name="description" content="Beregn månedlig betaling, belåningsgrad og effektiv rente for boliglånet ditt. Gratis boliglånskalkulator med full nedbetalingsplan.">
+  <meta name="description" content="Beregn månedlig betaling, belåningsgrad og effektiv rente for boliglånet ditt.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://lånekalken.no/boliglan.html">
   <meta property="og:title" content="Boliglånskalkulator – Beregn boliglån gratis | Lånekalken">
-  <meta property="og:description" content="Beregn månedlig betaling, belåningsgrad og effektiv rente for boliglånet ditt. Gratis boliglånskalkulator med full nedbetalingsplan.">
+  <meta property="og:description" content="Beregn månedlig betaling, belåningsgrad og effektiv rente for boliglånet ditt.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lånekalken.no/boliglan.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -221,13 +221,13 @@
     <button class="hamburger" id="hamburger" aria-label="Åpne meny"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<section class="hero"><h1>Boliglånskalkulator</h1><p>Beregn månedlige kostnader for boliglånet ditt. Se belåningsgrad, effektiv rente og full nedbetalingsplan.</p></section>
 <div class="top-banner-ad">
   <div class="ad-inner">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
     <span>Annonseplass – 728×90</span>
   </div>
-</div>
-<section class="hero"><h1>Boliglånskalkulator</h1><p>Beregn månedlige kostnader for boliglånet ditt. Se belåningsgrad, effektiv rente og full nedbetalingsplan.</p></section><div class="main-wrap">
+</div><div class="main-wrap">
 <aside class="ad-sidebar" aria-label="Annonse"><div class="ad-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>Annonse</span></div></aside>
 <main><div class="calc-section">
 <div class="calc-grid">
@@ -297,15 +297,13 @@
 </div></div></main>
 <aside class="ad-sidebar" aria-label="Annonse"><div class="ad-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>Annonse</span></div></aside>
 </div>
-<div class="content-wrap" style="max-width:100%;padding:32px 0 0">
+<div class="content-wrap">
   <h2>Boliglånskalkulator – hva trenger du å vite?</h2>
   <p>Før du søker boliglån er det smart å sette seg inn i hva lånet faktisk koster deg. En boliglånskalkulator gir deg oversikt over månedlig betaling, total kostnad og effektiv rente – basert på boligverdi, egenkapital og ønsket nedbetalingstid.</p>
   <h2>Belåningsgrad – hvorfor det er viktig</h2>
   <p>Belåningsgraden er forholdet mellom lånebeløpet og boligens verdi. Norske banker krever minimum 15 % egenkapital – altså maks 85 % belåningsgrad. Jo lavere belåningsgrad, jo bedre rente får du vanligvis.</p>
-  <div class="info-box"><h4>Ulike typer boliglån</h4><p>Banker tilbyr førstehjemslån for deg som kjøper første gang, boliglån for unge (under 34 år) og grønt boliglån for boliger med energimerke A eller B. Alle gir som regel bedre rente enn standard boliglån.</p></div>
+  <div class="info-box"><h4>Ulike typer boliglån</h4><p>Banker tilbyr førstehjemslån, boliglån for unge (under 34 år) og grønt boliglån for boliger med energimerke A eller B. Alle gir som regel bedre rente enn standard boliglån.</p></div>
   <div class="cta-box"><h4>Vil du refinansiere boliglånet?</h4><p>Les vår guide om refinansiering og se hva du kan spare ved å bytte bank.</p><a href="/refinansiering.html" class="cta-btn">Les om refinansiering →</a></div>
-  <h2>Tips for å få best mulig boliglån</h2>
-  <p>Forbedre kredittscoren din ved å betale ned gjeld. Sammenlign tilbud fra minst 3–5 banker. Vurder refinansiering hvert 2–3 år dersom boligen har økt i verdi.</p>
   <h2>Ofte stilte spørsmål</h2>
   <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hva er maks belåningsgrad i Norge? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;transition:transform 200ms"><path d="M6 9l6 6 6-6"/></svg></div>
     <div class="faq-a">Banker kan som regel ikke gi deg boliglån som overstiger 85 % av boligens verdi. For unge under 34 år finnes unntak via BSU og foreldrenes sikkerhet.</div></div>
@@ -428,14 +426,9 @@ function updateSliderFill(id) {
   if (fill) fill.style.width = pct + '%';
 }
 
-let loanType = 'annuitet';
-function setType(t) {
-  loanType=t;
-  document.getElementById('togAnn').classList.toggle('active',t==='annuitet');
-  document.getElementById('togSer').classList.toggle('active',t==='serie');
-  calculate();
-}
-function calculate() {
+let loanType='annuitet';
+function setType(t){loanType=t;document.getElementById('togAnn').classList.toggle('active',t==='annuitet');document.getElementById('togSer').classList.toggle('active',t==='serie');calculate();}
+function calculate(){
   const bv=parseFloat(document.getElementById('boligVerdi').value)||0;
   const ek=parseFloat(document.getElementById('egenkapital').value)||0;
   const P=Math.max(0,bv-ek);
@@ -459,12 +452,9 @@ function calculate() {
   document.getElementById('totalPay').textContent=fmt(totalPay);
   document.getElementById('effRate').textContent=fmtPct(calcEff(P,monthly,n,incl?0:estFee+tingl));
   document.getElementById('termCount').textContent='('+n+' terminer)';
-  renderChart(sched); renderTable(sched);
+  renderChart(sched);renderTable(sched);
 }
-['boligVerdi','egenkapital','rate','yrs','mths','termFee','estFee','tinglysning'].forEach(id=>{
-  const el=document.getElementById(id);
-  if(el){el.addEventListener('input',calculate);el.addEventListener('change',calculate);}
-});
+['boligVerdi','egenkapital','rate','yrs','mths','termFee','estFee','tinglysning'].forEach(id=>{const el=document.getElementById(id);if(el){el.addEventListener('input',calculate);el.addEventListener('change',calculate);}});
 document.getElementById('inclFees').addEventListener('change',calculate);
 calculate();
 </script></body></html>

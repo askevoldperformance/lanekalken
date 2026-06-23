@@ -221,13 +221,13 @@
     <button class="hamburger" id="hamburger" aria-label="Åpne meny"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<section class="hero"><h1>Lånekalkulator forbrukslån</h1><p>Regn ut månedlige kostnader for ditt forbrukslån. Se effektiv rente og full nedbetalingsplan.</p></section>
 <div class="top-banner-ad">
   <div class="ad-inner">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
     <span>Annonseplass – 728×90</span>
   </div>
-</div>
-<section class="hero"><h1>Lånekalkulator forbrukslån</h1><p>Regn ut månedlige kostnader for ditt forbrukslån. Se effektiv rente og full nedbetalingsplan.</p></section><div class="main-wrap">
+</div><div class="main-wrap">
 <aside class="ad-sidebar" aria-label="Annonse"><div class="ad-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>Annonse</span></div></aside>
 <main><div class="calc-section">
 <div class="calc-grid">
@@ -279,9 +279,9 @@
 </div></div></main>
 <aside class="ad-sidebar" aria-label="Annonse"><div class="ad-box"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>Annonse</span></div></aside>
 </div>
-<div class="content-wrap" style="max-width:100%;padding:32px 0 0">
+<div class="content-wrap">
   <h2>Hva er forbrukslån?</h2>
-  <p>Forbrukslån er lån uten sikkerhet – banken har ikke pant i noe du eier. Det gir deg full frihet til å bruke pengene på det du ønsker: uforutsette utgifter, oppussing, bryllup, ferie eller refinansiering av dyrere lån. Friheten koster i form av høyere rente enn lån med sikkerhet.</p>
+  <p>Forbrukslån er lån uten sikkerhet – banken har ikke pant i noe du eier. Det gir deg full frihet til å bruke pengene på det du ønsker: uforutsette utgifter, oppussing, bryllup, ferie eller refinansiering av dyrere lån.</p>
   <div class="pros-cons">
     <div class="pros-box"><h4>Fordeler</h4><ul>
       <li>Pengene kan brukes fritt</li>
@@ -298,11 +298,9 @@
   <div class="cta-box"><h4>Har du flere forbrukslån?</h4><p>Refinansiering kan spare deg for tusenvis av kroner. Les vår guide.</p><a href="/refinansiering.html" class="cta-btn">Les om refinansiering →</a></div>
   <h2>Ofte stilte spørsmål</h2>
   <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hva kan forbrukslån brukes til? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;transition:transform 200ms"><path d="M6 9l6 6 6-6"/></svg></div>
-    <div class="faq-a">Forbrukslån kan brukes til det du ønsker – uforutsette utgifter, oppussing, bryllup, ferie, bilreparasjon eller refinansiering av dyrere smålån.</div></div>
+    <div class="faq-a">Forbrukslån kan brukes til det du ønsker – uforutsette utgifter, oppussing, bryllup, ferie eller refinansiering av dyrere smålån.</div></div>
   <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hva er typisk rente på forbrukslån? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;transition:transform 200ms"><path d="M6 9l6 6 6-6"/></svg></div>
     <div class="faq-a">Effektiv rente på forbrukslån ligger typisk mellom 10 og 25 %. Renten avhenger av lånebeløp, løpetid og din kredittscore.</div></div>
-  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kan jeg betale ned raskere enn avtalt? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;transition:transform 200ms"><path d="M6 9l6 6 6-6"/></svg></div>
-    <div class="faq-a">Ja, de fleste forbrukslån kan innfris raskere uten ekstra kostnader. Du sparer da renter for den resterende perioden.</div></div>
 </div>
 <footer>
   <div class="footer-inner">
@@ -420,7 +418,7 @@ function updateSliderFill(id) {
   if (fill) fill.style.width = pct + '%';
 }
 
-function calculate() {
+function calculate(){
   const P=parseFloat(document.getElementById('loanAmt').value)||0;
   const r=parseFloat(document.getElementById('rate').value)/100/12;
   const n=(parseInt(document.getElementById('yrs').value)||0)*12+(parseInt(document.getElementById('mths').value)||0);
@@ -434,11 +432,8 @@ function calculate() {
   document.getElementById('totalCost').textContent=fmt(totalPay-P);
   document.getElementById('effRate').textContent=fmtPct(calcEff(P,monthly,n,estFee));
   document.getElementById('termCount').textContent='('+n+' terminer)';
-  renderChart(sched); renderTable(sched);
+  renderChart(sched);renderTable(sched);
 }
-['loanAmt','rate','yrs','mths','termFee','estFee'].forEach(id=>{
-  const el=document.getElementById(id);
-  if(el){el.addEventListener('input',calculate);el.addEventListener('change',calculate);}
-});
+['loanAmt','rate','yrs','mths','termFee','estFee'].forEach(id=>{const el=document.getElementById(id);if(el){el.addEventListener('input',calculate);el.addEventListener('change',calculate);}});
 calculate();
 </script></body></html>
