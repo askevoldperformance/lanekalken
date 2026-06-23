@@ -211,8 +211,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .ad-sidebar { display:none; }
     }
     @media (max-width:768px) {
-      html { overflow-x:hidden; }
-      body { overflow-x:hidden; }
+      html { overflow-x:hidden; max-width:100vw; }
+      body { overflow-x:hidden; max-width:100vw; }
+      * { max-width:100%; }
+      .main-wrap { width:100%; max-width:100%; }
       .hero { padding:32px 16px 24px; }
       .hero h1 { font-size:22px; }
       .top-banner-ad { display:none; }
@@ -244,6 +246,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .slider-field { margin-bottom:16px; }
       .toggle-row { gap:6px; }
       .toggle-btn { font-size:12px; padding:8px 6px; }
+      .toggle-row { width:100%; }
+      .toggle-row .toggle-btn { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+      .select-row { width:100%; }
+      .select-row .select-wrap { min-width:0; }
+      .select-wrap select { width:100%; min-width:0; }
+      .input-wrap { width:100%; }
+      .input-wrap input[type=number] { width:100%; min-width:0; }
+      .card { width:100%; overflow:hidden; }
+      .result-card { width:100%; overflow:hidden; }
+      .calc-section { width:100%; }
       .tabs { padding:16px 16px 0; gap:6px; }
       .tab-btn { padding:8px 14px; font-size:13px; }
     }
