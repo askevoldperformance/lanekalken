@@ -1,15 +1,5 @@
 {
   "cleanUrls": true,
-  "redirects": [
-    { "source": "/refinansiering", "destination": "/guider/refinansiering", "permanent": true },
-    { "source": "/omstartslan", "destination": "/guider/omstartslan", "permanent": true },
-    { "source": "/inkasso", "destination": "/guider/inkasso", "permanent": true },
-    { "source": "/kredittsjekk", "destination": "/guider/kredittsjekk", "permanent": true },
-    { "source": "/refinansiering.html", "destination": "/guider/refinansiering", "permanent": true },
-    { "source": "/omstartslan.html", "destination": "/guider/omstartslan", "permanent": true },
-    { "source": "/inkasso.html", "destination": "/guider/inkasso", "permanent": true },
-    { "source": "/kredittsjekk.html", "destination": "/guider/kredittsjekk", "permanent": true }
-  ],
   "rewrites": [
     { "source": "/boliglan", "destination": "/boliglan.html" },
     { "source": "/billan", "destination": "/billan.html" },
