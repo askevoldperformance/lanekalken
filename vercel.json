@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/boliglan", "destination": "/boliglan.html" },
+    { "source": "/billan", "destination": "/billan.html" },
+    { "source": "/forbrukslan", "destination": "/forbrukslan.html" },
+    { "source": "/kredittkort", "destination": "/kredittkort.html" },
+    { "source": "/sparing", "destination": "/sparing.html" },
+    { "source": "/guider", "destination": "/guider.html" },
+    { "source": "/guider/refinansiering", "destination": "/guider/refinansiering.html" },
+    { "source": "/guider/omstartslan", "destination": "/guider/omstartslan.html" },
+    { "source": "/guider/inkasso", "destination": "/guider/inkasso.html" },
+    { "source": "/guider/kredittsjekk", "destination": "/guider/kredittsjekk.html" },
+    { "source": "/personvern", "destination": "/personvern.html" }
+  ]
+}
