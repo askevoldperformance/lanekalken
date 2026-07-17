@@ -12,14 +12,14 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
   <link rel="icon" type="image/png" href="/logo.png">
   <meta name="google-adsense-account" content="ca-pub-4789906927045850">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Forbrukslån kalkulator – Beregn lån uten sikkerhet | Lånekalken</title>
-  <meta name="description" content="Beregn månedlig betaling og effektiv rente for forbrukslån. Inkludert etableringsgebyr og termingebyr.">
+  <title>Om Lånekalken – Gratis lånekalkulatorer for deg | Lånekalken</title>
+  <meta name="description" content="Les om Lånekalken – et gratis verktøy som hjelper deg å forstå lånekostnader, sammenligne renter og ta bedre økonomiske beslutninger.">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://lånekalken.no/forbrukslan.html">
-  <meta property="og:title" content="Forbrukslån kalkulator – Beregn lån uten sikkerhet | Lånekalken">
-  <meta property="og:description" content="Beregn månedlig betaling og effektiv rente for forbrukslån. Inkludert etableringsgebyr og termingebyr.">
+  <link rel="canonical" href="https://lånekalken.no">
+  <meta property="og:title" content="Lånekalken – Gratis lånekalkulator">
+  <meta property="og:description" content="Beregn månedlig betaling, totalkostnad og effektiv rente for boliglån, billån og forbrukslån.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lånekalken.no/forbrukslan.html">
+  <meta property="og:url" content="https://lånekalken.no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -265,101 +265,52 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 </style>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNFCF2XQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav>
   <div class="nav-inner">
     <a href="/" class="logo"><img src="/logo.png" alt="Lånekalken logo" width="32" height="32"><span>Låne<em>kalken</em></span></a>
-    <ul class="nav-links" id="navLinks"><li><a href="/" class="">Lånekalkulator</a></li><li><a href="/boliglan" class="">Boliglån</a></li><li><a href="/billan" class="">Billån</a></li><li><a href="/forbrukslan" class="active">Forbrukslån</a></li><li><a href="/kredittkort" class="">Kredittkort</a></li><li><a href="/sparing" class="">Sparing</a></li><li class="nav-dropdown"><a href="/guider" class="">Guider ▾</a><div class="nav-dropdown-menu"><a href="/guider">Alle guider</a><a href="/guider/refinansiering">Refinansiering</a><a href="/guider/omstartslan">Omstartslån</a><a href="/guider/inkasso">Inkasso</a><a href="/guider/kredittsjekk">Kredittsjekk</a></div></li></ul>
+    <ul class="nav-links" id="navLinks"><li><a href="/" class="active">Lånekalkulator</a></li><li><a href="/boliglan" class="">Boliglån</a></li><li><a href="/billan" class="">Billån</a></li><li><a href="/forbrukslan" class="">Forbrukslån</a></li><li><a href="/kredittkort" class="">Kredittkort</a></li><li><a href="/sparing" class="">Sparing</a></li><li class="nav-dropdown"><a href="/guider" class="">Guider ▾</a><div class="nav-dropdown-menu"><a href="/guider">Alle guider</a><a href="/guider/refinansiering">Refinansiering</a><a href="/guider/omstartslan">Omstartslån</a><a href="/guider/inkasso">Inkasso</a><a href="/guider/kredittsjekk">Kredittsjekk</a></div></li></ul>
     <button class="hamburger" id="hamburger" aria-label="Åpne meny"><span></span><span></span><span></span></button>
   </div>
 </nav>
-<section class="hero"><h1>Lånekalkulator forbrukslån</h1><p>Regn ut månedlige kostnader for ditt forbrukslån. Se effektiv rente og full nedbetalingsplan.</p></section>
+<section class="hero">
+  <h1>Om Lånekalken</h1>
+  <p>Et gratis og uavhengig verktøy som hjelper deg å forstå lånekostnader og ta bedre økonomiske beslutninger.</p>
+</section>
 <div class="main-wrap">
-
-<main><div class="calc-section">
-<div class="calc-grid">
-<div class="card">
-  <h3>Lånedetaljer</h3>
-  <div class="field"><label for="loanAmt">Lånebeløp</label>
-    <div class="input-wrap"><input type="number" id="loanAmt" value="150000" min="0" step="5000"><span class="input-unit">kr</span></div></div>
-  <div class="field"><label for="rate">Nominell rente</label>
-    <div class="input-wrap"><input type="number" id="rate" value="15" min="0" max="60" step="0.01"><span class="input-unit">%</span></div></div>
-  <div class="field"><label>Nedbetalingstid</label>
-    <div class="select-row">
-      <div class="select-wrap"><select id="yrs"><option value="1">1 år</option><option value="2">2 år</option><option value="3">3 år</option><option value="4">4 år</option><option value="5" selected>5 år</option></select></div>
-      <div class="select-wrap"><select id="mths"><option value="0" selected>0 mnd</option><option value="1">1 mnd</option><option value="2">2 mnd</option><option value="3">3 mnd</option><option value="6">6 mnd</option></select></div>
-    </div></div>
-  <div class="two-col">
-    <div class="field"><label for="estFee">Etableringsgebyr</label>
-      <div class="input-wrap"><input type="number" id="estFee" value="950" min="0" step="50"><span class="input-unit">kr</span></div></div>
-    <div class="field"><label for="termFee">Termingebyr</label>
-      <div class="input-wrap"><input type="number" id="termFee" value="50" min="0" step="5"><span class="input-unit">kr</span></div></div>
-  </div>
-</div>
-<div class="result-card">
-  <div class="result-main">
-    <div class="result-label">Månedlig betaling</div>
-    <div class="result-amount" id="monthly">–</div>
-    <div class="result-sub">per måned</div>
-  </div>
-  <div class="result-rows">
-    <div class="result-row"><span class="r-label">Totale kostnader</span><span class="r-val" id="totalCost">–</span></div>
-    <div class="result-row"><span class="r-label">Effektiv rente</span><span class="r-val accent" id="effRate">–</span></div>
-  </div>
-</div>
-</div><div class="amort-card">
-  <div class="amort-header" onclick="toggleAmort()">
-    <h3>Nedbetalingsplan <span class="term-count" id="termCount"></span></h3>
-    <svg id="amortChevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition:transform 200ms"><path d="M18 15l-6-6-6 6"/></svg>
-  </div>
-  <div class="amort-body open" id="amortBody">
-    <div class="chart-wrap"><canvas id="amortChart"></canvas></div>
-    <table class="amort-table"><thead><tr><th>Termin</th><th>Beløp</th><th>Renter</th><th>Gebyrer</th><th>Avdrag</th><th>Restgjeld</th></tr></thead><tbody id="amortTbody"></tbody></table>
-  </div>
-</div><div class="affiliate-section">
-  <p class="annonse-label">Annonse</p>
-  <h3>Sammenlign forbrukslån</h3>
-  <div class="affiliate-card">
-    <div class="affiliate-info"><strong>Axo Finans – Forbrukslån</strong><span>Finn beste rente fra flere banker – én søknad, gratis og uforpliktende</span><small>Eksempel: Forbrukslån 150 000 kr. Nominell rente 10,90 %. Effektiv rente 12,15 %. Nedbetalt over 5 år. Kostnad 45 678 kr. Totalt 195 678 kr.</small></div>
-    <a href="https://www.axofinans.no" target="_blank" rel="noopener sponsored" class="affiliate-btn">Søk nå <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-  </div>
-</div></div></main>
-
-</div>
+<main>
 <div class="content-wrap">
-  <h2>Hva er forbrukslån?</h2>
-  <p>Forbrukslån er lån uten sikkerhet – banken har ikke pant i noe du eier. Det gir deg full frihet til å bruke pengene på det du ønsker: uforutsette utgifter, oppussing, bryllup, ferie eller refinansiering av dyrere lån.</p>
-  <div class="pros-cons">
-    <div class="pros-box"><h4>Fordeler</h4><ul>
-      <li>Pengene kan brukes fritt</li>
-      <li>Ingen krav om sikkerhet i eiendom</li>
-      <li>Fleksibel nedbetaling</li>
-      <li>Kan innfris raskere enn avtalt</li>
-    </ul></div>
-    <div class="cons-box"><h4>Ulemper</h4><ul>
-      <li>Høyere rente enn boliglån</li>
-      <li>Tilgjengelig beløp avhenger av kredittscore</li>
-      <li>Kan bli dyrt ved lang løpetid</li>
-    </ul></div>
+
+  <h2>Hva er Lånekalken?</h2>
+  <p>Lånekalken er et gratis digitalt verktøy for deg som ønsker å forstå de reelle kostnadene ved lån. Vi tilbyr kalkulatorer for boliglån, billån, forbrukslån, kredittkort og sparing – alt uten registrering og uten kostnad.</p>
+  <p>Verktøyet er laget for vanlige folk, ikke finanseksperter. Du trenger ikke forstå kompliserte formler – du legger inn tallene dine og får umiddelbart svar på hva lånet faktisk koster deg per måned og totalt over løpetiden.</p>
+
+  <h2>Hvorfor er Lånekalken gratis?</h2>
+  <p>Lånekalken finansieres gjennom annonseinntekter og affiliatepartnerskap med finansinstitusjoner. Når du klikker på lenker til banker og lånetjenester via Lånekalken kan vi motta en provisjon. Dette påvirker aldri innholdet eller rådene på siden – vi er uavhengige og har ingen kommersielle bindinger til spesifikke banker.</p>
+
+  <h2>Er beregningene nøyaktige?</h2>
+  <p>Lånekalken bruker de samme matematiske formlene som bankene bruker for annuitets- og serielån. Beregningene er veiledende – faktiske lånebetingelser, renter og gebyrer vil variere mellom banker og avhenge av din individuelle kredittscore og økonomi. Ta alltid kontakt med banken for et konkret tilbud.</p>
+
+  <h2>Finansiell rådgivning</h2>
+  <p>Lånekalken er ikke finansiell rådgivning. Vi er et kalkulatorverktøy som gir deg tallgrunnlaget du trenger for å stille gode spørsmål til banken din. For personlig finansiell rådgivning anbefaler vi å ta kontakt med en autorisert finansrådgiver eller banken din direkte.</p>
+
+  <h2>Personvern og cookies</h2>
+  <p>Vi respekterer ditt personvern. Les vår <a href="/personvern" style="color:var(--accent)">personvernerklæring</a> for å forstå hvilke data vi samler inn og hvordan de brukes. Du kan når som helst endre dine cookie-innstillinger.</p>
+
+  <h2>Kontakt</h2>
+  <p>Har du spørsmål, feil du vil rapportere eller forslag til forbedringer? Send oss en e-post på <a href="mailto:post@lånekalken.no" style="color:var(--accent)">post@lånekalken.no</a>.</p>
+
+  <h2>Kalkulatorene våre</h2>
+  <div class="guide-grid">
+    <a href="/" class="guide-card"><h3>Lånekalkulator</h3><p>Beregn månedlig betaling og effektiv rente for alle typer lån.</p><span class="arrow">Åpne →</span></a>
+    <a href="/boliglan" class="guide-card"><h3>Boliglånskalkulator</h3><p>Beregn belåningsgrad og full nedbetalingsplan.</p><span class="arrow">Åpne →</span></a>
+    <a href="/billan" class="guide-card"><h3>Billånskalkulator</h3><p>Inkludert elbil-kalkulator med lavere rente.</p><span class="arrow">Åpne →</span></a>
+    <a href="/forbrukslan" class="guide-card"><h3>Forbrukslånskalkulator</h3><p>Beregn kostnad inkludert alle gebyrer.</p><span class="arrow">Åpne →</span></a>
+    <a href="/kredittkort" class="guide-card"><h3>Kredittkortkalkulator</h3><p>Se hva kredittkortgjelden faktisk koster.</p><span class="arrow">Åpne →</span></a>
+    <a href="/sparing" class="guide-card"><h3>Sparekalkulator</h3><p>Beregn rentes rente og sparemål.</p><span class="arrow">Åpne →</span></a>
   </div>
-  <div class="cta-box"><h4>Har du flere forbrukslån?</h4><p>Refinansiering kan spare deg for tusenvis av kroner. Les vår guide.</p><a href="/refinansiering.html" class="cta-btn">Les om refinansiering →</a></div>
 
-  <h2>Når bør du bruke forbrukslån?</h2>
-  <p>Forbrukslån bør brukes med forsiktighet. Det kan være fornuftig til uforutsette utgifter som tannlege eller bilreparasjon, eller til å refinansiere dyrere smålån og kredittkortgjeld. Bruk aldri forbrukslån til løpende utgifter eller forbruk du ikke har råd til.</p>
-
-  <h2>Rente på forbrukslån</h2>
-  <p>Effektiv rente på forbrukslån ligger typisk mellom 10 og 25 %. Renten avhenger av lånebeløp, løpetid og din kredittscore. Store lån med lang løpetid gir ofte lavere rente, men totalkostnaden blir høyere. Sammenlign alltid effektiv rente, ikke nominell rente.</p>
-
-  <h2>Gjeldsregisteret og 5-gangerregelen</h2>
-  <p>Banker sjekker Gjeldsregisteret ved søknad om forbrukslån. Total gjeld kan ikke overstige 5 ganger bruttoinntekten din. Kredittkortgrenser teller med selv om de er ubenyttet, så vurder å redusere ubenyttede kredittkortgrenser før du søker lån.</p>
-
-  <h2>Refinansiering av forbrukslån</h2>
-  <p>Har du flere forbrukslån kan det lønne seg å samle dem i ett lån med lavere rente. Se vår guide om <a href="/guider/refinansiering" style="color:var(--accent)">refinansiering</a> for å lese mer om hvordan dette fungerer og hva du kan spare.</p>
-  <h2>Ofte stilte spørsmål</h2>
-  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hva kan forbrukslån brukes til? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;transition:transform 200ms"><path d="M6 9l6 6 6-6"/></svg></div>
-    <div class="faq-a">Forbrukslån kan brukes til det du ønsker – uforutsette utgifter, oppussing, bryllup, ferie eller refinansiering av dyrere smålån.</div></div>
-  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hva er typisk rente på forbrukslån? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;transition:transform 200ms"><path d="M6 9l6 6 6-6"/></svg></div>
-    <div class="faq-a">Effektiv rente på forbrukslån ligger typisk mellom 10 og 25 %. Renten avhenger av lånebeløp, løpetid og din kredittscore.</div></div>
+</div>
+</main>
 </div>
 <footer>
   <div class="footer-inner">
@@ -391,32 +342,6 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
     <a href="#" style="color:var(--text-s);text-decoration:none">Personvernerklæring</a>
   </div>
 </footer>
-<script>
-document.getElementById('hamburger').addEventListener('click', function() {
-  const nav = document.getElementById('navLinks');
-  const open = nav.classList.toggle('open');
-  this.setAttribute('aria-expanded', open);
-});
-
-function toggleFaq(el) {
-  const a = el.nextElementSibling;
-  const isOpen = a.classList.toggle('open');
-  const svg = el.querySelector('svg');
-  if (svg) svg.style.transform = isOpen ? 'rotate(180deg)' : '';
-}
-function toggleAdv() {
-  const p = document.getElementById('advPanel');
-  const open = p.classList.toggle('open');
-  const btn = document.getElementById('advBtn');
-  if (btn) { const svg = btn.querySelector('svg'); if (svg) svg.style.transform = open ? 'rotate(180deg)' : ''; }
-}
-function toggleAmort() {
-  const b = document.getElementById('amortBody');
-  const open = b.classList.toggle('open');
-  const chev = document.getElementById('amortChevron');
-  if (chev) chev.style.transform = open ? '' : 'rotate(180deg)';
-}
-</script>
 <script src="/cookie_banner.js"></script>
 </body>
 </html><script>
@@ -478,22 +403,38 @@ function updateSliderFill(id) {
   if (fill) fill.style.width = pct + '%';
 }
 
-function calculate(){
+let loanType = 'annuitet';
+function setType(t) {
+  loanType=t;
+  document.getElementById('togAnn').classList.toggle('active',t==='annuitet');
+  document.getElementById('togSer').classList.toggle('active',t==='serie');
+  calculate();
+}
+function calculate() {
+  const tpy=parseInt(document.getElementById('tpy').value)||12;
   const P=parseFloat(document.getElementById('loanAmt').value)||0;
-  const r=parseFloat(document.getElementById('rate').value)/100/12;
-  const n=(parseInt(document.getElementById('yrs').value)||0)*12+(parseInt(document.getElementById('mths').value)||0);
+  const r=parseFloat(document.getElementById('rate').value)/100/tpy;
+  const n=((parseInt(document.getElementById('yrs').value)||0)*12+(parseInt(document.getElementById('mths').value)||0))*tpy/12;
   const fee=parseFloat(document.getElementById('termFee').value)||0;
   const estFee=parseFloat(document.getElementById('estFee').value)||0;
-  if(!P||!n) return;
-  const sched=buildSchedule(P,r,n,fee,'annuitet');
+  const tingl=parseFloat(document.getElementById('tinglysning').value)||0;
+  const incl=document.getElementById('inclFees').checked;
+  const loanP=incl?P+estFee+tingl:P;
+  if(!loanP||!n) return;
+  const sched=buildSchedule(loanP,r,n,fee,loanType);
   const monthly=sched[0].payment;
-  const totalPay=sched.reduce((s,r)=>s+r.payment,0)+estFee;
+  const totalPay=sched.reduce((s,r)=>s+r.payment,0)+(incl?0:estFee+tingl);
   document.getElementById('monthly').textContent=fmt(monthly);
   document.getElementById('totalCost').textContent=fmt(totalPay-P);
-  document.getElementById('effRate').textContent=fmtPct(calcEff(P,monthly,n,estFee));
+  document.getElementById('totalPay').textContent=fmt(totalPay);
+  document.getElementById('effRate').textContent=fmtPct(calcEff(P,monthly,n,incl?0:estFee+tingl));
   document.getElementById('termCount').textContent='('+n+' terminer)';
-  renderChart(sched);renderTable(sched);
+  renderChart(sched); renderTable(sched);
 }
-['loanAmt','rate','yrs','mths','termFee','estFee'].forEach(id=>{const el=document.getElementById(id);if(el){el.addEventListener('input',calculate);el.addEventListener('change',calculate);}});
+['loanAmt','rate','yrs','mths','termFee','estFee','tinglysning','tpy'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el){el.addEventListener('input',calculate);el.addEventListener('change',calculate);}
+});
+document.getElementById('inclFees').addEventListener('change',calculate);
 calculate();
 </script></body></html>
