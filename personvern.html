@@ -1,47 +1,293 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
+"https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,"script","dataLayer","GTM-NNFCF2XQ");</script>
+<!-- End Google Tag Manager -->
   <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="/logo.png">
+  <meta name="google-adsense-account" content="ca-pub-4789906927045850">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Personvernerklæring – Lånekalken</title>
-  <meta name="robots" content="noindex">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Personvernerklæring | Lånekalken</title>
+  <meta name="description" content="Les Lånekalken sin personvernerklæring. Her finner du informasjon om hvilke data vi samler inn, hvordan de brukes og dine rettigheter.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://lånekalken.no">
+  <meta property="og:title" content="Lånekalken – Gratis lånekalkulator">
+  <meta property="og:description" content="Beregn månedlig betaling, totalkostnad og effektiv rente for boliglån, billån og forbrukslån.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lånekalken.no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'IBM Plex Sans',system-ui,sans-serif;background:#121C2D;color:#F0F4FA;font-size:16px;line-height:1.7}
-    .wrap{max-width:780px;margin:0 auto;padding:48px 24px 80px}
-    h1{font-size:28px;font-weight:700;margin-bottom:8px}
-    .updated{font-size:13px;color:#64748B;margin-bottom:40px}
-    h2{font-size:18px;font-weight:700;margin:36px 0 12px;color:#F0F4FA}
-    h3{font-size:15px;font-weight:600;margin:20px 0 8px;color:#0DAF7B}
-    p{color:#94A3B8;margin-bottom:14px}
-    ul{list-style:none;padding:0;margin:0 0 16px}
-    ul li{color:#94A3B8;padding:5px 0 5px 18px;position:relative}
-    ul li::before{content:'→';position:absolute;left:0;color:#0DAF7B;font-size:12px;top:7px}
-    a{color:#0DAF7B;text-decoration:underline}
-    .box{background:#1E2D44;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px 24px;margin:20px 0}
-    .box h3{margin-top:0}
-    table{width:100%;border-collapse:collapse;font-size:14px;margin:16px 0}
-    th{text-align:left;padding:10px 14px;background:#1E2D44;color:#64748B;font-size:12px;text-transform:uppercase;letter-spacing:0.8px;border-bottom:1px solid rgba(255,255,255,0.08)}
-    td{padding:10px 14px;color:#94A3B8;border-bottom:1px solid rgba(255,255,255,0.05)}
-    tr:last-child td{border-bottom:none}
-    .back{display:inline-flex;align-items:center;gap:8px;color:#64748B;text-decoration:none;font-size:14px;margin-bottom:32px}
-    .back:hover{color:#0DAF7B}
-  </style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#121C2D; --bg2:#1A2640; --bg3:#1F2E47;
+      --card:#1E2D44; --card2:#243352;
+      --accent:#0DAF7B; --accent-h:#0D8F65; --accent-s:rgba(13,175,123,0.15);
+      --text:#F0F4FA; --text-m:#94A3B8; --text-s:#64748B;
+      --border:rgba(255,255,255,0.08); --border-a:rgba(13,175,123,0.4);
+      --radius:12px; --radius-s:8px; --shadow:0 4px 24px rgba(0,0,0,0.4);
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:'IBM Plex Sans',system-ui,sans-serif; background:var(--bg); color:var(--text); font-size:16px; line-height:1.6; min-height:100vh; }
+
+    /* NAV */
+    nav { position:sticky; top:0; z-index:50; background:rgba(18,28,45,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:0 24px; }
+    .nav-inner { max-width:1400px; margin:0 auto; display:flex; align-items:center; gap:24px; height:64px; }
+    .logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
+    .logo img { width:32px; height:32px; object-fit:contain; }
+    .logo span { font-size:18px; font-weight:700; color:var(--text); letter-spacing:-0.3px; }
+    .logo span em { color:var(--accent); font-style:normal; }
+    .nav-links { display:flex; gap:2px; list-style:none; flex:1; flex-wrap:wrap; }
+    .nav-links a { text-decoration:none; color:var(--text-m); font-size:14px; font-weight:500; padding:6px 11px; border-radius:var(--radius-s); transition:all 200ms; white-space:nowrap; cursor:pointer; display:block; }
+    .nav-links a:hover,.nav-links a.active { color:var(--accent); background:var(--accent-s); }
+    .nav-dropdown { position:relative; }
+    .nav-dropdown-menu { display:none; position:absolute; top:calc(100% + 8px); left:0; background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:8px; min-width:180px; z-index:100; box-shadow:var(--shadow); }
+    .nav-dropdown:hover .nav-dropdown-menu { display:block; }
+    .nav-dropdown-menu a { display:block; padding:8px 12px; color:var(--text-m); text-decoration:none; font-size:13px; border-radius:var(--radius-s); transition:all 200ms; }
+    .nav-dropdown-menu a:hover { color:var(--accent); background:var(--accent-s); }
+    .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; margin-left:auto; }
+    .hamburger span { display:block; width:22px; height:2px; background:var(--text); border-radius:2px; }
+
+    /* TOP BANNER AD */
+    .top-banner-ad { background:var(--bg2); border-bottom:1px solid var(--border); padding:8px 24px; display:flex; align-items:center; justify-content:center; }
+    .top-banner-ad .ad-inner { max-width:728px; width:100%; height:90px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-s); display:flex; align-items:center; justify-content:center; gap:8px; color:var(--text-s); font-size:11px; }
+
+    /* HERO */
+    .hero { background:linear-gradient(135deg,#121C2D 0%,#1A2640 50%,#0D1F35 100%); padding:48px 24px 32px; text-align:center; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; top:-80px; right:-80px; width:400px; height:400px; background:radial-gradient(circle,rgba(13,175,123,0.12) 0%,transparent 70%); pointer-events:none; }
+    .hero h1 { font-size:clamp(22px,4vw,38px); font-weight:700; line-height:1.2; margin-bottom:10px; letter-spacing:-0.5px; }
+    .hero p { color:var(--text-m); font-size:15px; max-width:520px; margin:0 auto; }
+
+    /* LAYOUT */
+    .main-wrap { max-width:1200px; margin:0 auto; padding:28px 24px 48px; display:block; }
+    .ad-sidebar { position:sticky; top:88px; }
+    .ad-box { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); width:160px; min-height:600px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; color:var(--text-s); font-size:11px; }
+
+    /* CARDS */
+    .calc-section { display:flex; flex-direction:column; gap:20px; }
+    .calc-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; }
+    .card h3 { font-size:11px; font-weight:600; margin-bottom:18px; color:var(--text-m); text-transform:uppercase; letter-spacing:0.8px; }
+
+    /* FORM */
+    .field { margin-bottom:18px; }
+    .field:last-child { margin-bottom:0; }
+    .field label { display:block; font-size:13px; font-weight:500; color:var(--text-m); margin-bottom:7px; }
+    .input-wrap { position:relative; display:flex; align-items:center; }
+    .input-wrap input[type=number] { width:100%; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-s); padding:11px 46px 11px 14px; font-family:inherit; font-size:15px; font-weight:500; color:var(--text); outline:none; transition:border-color 200ms; -moz-appearance:textfield; }
+    .input-wrap input[type=number]::-webkit-inner-spin-button,
+    .input-wrap input[type=number]::-webkit-outer-spin-button { -webkit-appearance:none; margin:0; }
+    .input-wrap input[type=number]:focus { border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-s); }
+    .input-unit { position:absolute; right:13px; font-size:13px; font-weight:600; color:var(--text-s); pointer-events:none; }
+    .select-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .select-wrap select { width:100%; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-s); padding:11px 32px 11px 13px; font-family:inherit; font-size:14px; color:var(--text); outline:none; cursor:pointer; transition:border-color 200ms; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 11px center; }
+    .select-wrap select:focus { border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-s); }
+    .toggle-row { display:flex; gap:8px; margin-bottom:18px; }
+    .toggle-btn { flex:1; padding:9px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-s); color:var(--text-m); font-family:inherit; font-size:13px; font-weight:500; cursor:pointer; transition:all 200ms; }
+    .toggle-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+    .advanced-toggle { background:none; border:none; color:var(--text-m); font-family:inherit; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:6px; padding:8px 0 0; transition:color 200ms; }
+    .advanced-toggle:hover { color:var(--accent); }
+    .advanced-panel { display:none; margin-top:14px; }
+    .advanced-panel.open { display:block; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .checkbox-row { display:flex; align-items:center; gap:10px; margin-top:12px; font-size:13px; color:var(--text-m); cursor:pointer; }
+    .checkbox-row input[type=checkbox] { width:18px; height:18px; accent-color:var(--accent); cursor:pointer; }
+
+    /* SLIDERS */
+    .slider-field { margin-bottom:20px; }
+    .slider-label-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .slider-label-row label { font-size:13px; font-weight:500; color:var(--text-m); }
+    .slider-label-row span { font-size:15px; font-weight:700; color:var(--accent); }
+    .slider-track { position:relative; height:6px; background:var(--bg3); border-radius:3px; margin-bottom:6px; }
+    .slider-fill { position:absolute; left:0; top:0; height:6px; background:var(--accent); border-radius:3px; pointer-events:none; transition:width 50ms; }
+    input[type=range] { position:relative; width:100%; height:6px; appearance:none; background:transparent; outline:none; cursor:pointer; margin:0; display:block; }
+    input[type=range]::-webkit-slider-thumb { appearance:none; width:22px; height:22px; border-radius:50%; background:var(--accent); cursor:pointer; border:3px solid var(--bg); box-shadow:0 2px 8px rgba(13,175,123,0.5); margin-top:-8px; }
+    input[type=range]::-moz-range-thumb { width:22px; height:22px; border-radius:50%; background:var(--accent); cursor:pointer; border:3px solid var(--bg); box-shadow:0 2px 8px rgba(13,175,123,0.5); }
+    input[type=range]::-webkit-slider-runnable-track { height:6px; background:transparent; border-radius:3px; }
+    input[type=range]::-moz-range-track { height:6px; background:var(--bg3); border-radius:3px; }
+    input[type=range]::-moz-range-progress { height:6px; background:var(--accent); border-radius:3px; }
+    .slider-range { display:flex; justify-content:space-between; font-size:11px; color:var(--text-s); margin-top:2px; }
+
+    /* RESULT */
+    .result-card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; }
+    .result-main { text-align:center; padding-bottom:20px; border-bottom:1px solid var(--border); margin-bottom:20px; }
+    .result-label { font-size:11px; font-weight:500; color:var(--text-m); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px; }
+    .result-amount { font-size:clamp(28px,5vw,42px); font-weight:700; color:var(--accent); letter-spacing:-1px; line-height:1; margin-bottom:4px; }
+    .result-sub { font-size:12px; color:var(--text-s); }
+    .result-rows { display:flex; flex-direction:column; gap:13px; }
+    .result-row { display:flex; justify-content:space-between; align-items:center; font-size:14px; }
+    .result-row .r-label { color:var(--text-m); }
+    .result-row .r-val { font-weight:600; }
+    .result-row .r-val.accent { color:var(--accent); }
+
+    /* AMORTIZATION */
+    .amort-card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+    .amort-header { display:flex; justify-content:space-between; align-items:center; padding:18px 24px; cursor:pointer; user-select:none; transition:background 200ms; }
+    .amort-header:hover { background:var(--bg2); }
+    .amort-header h3 { font-size:15px; font-weight:600; }
+    .amort-header .term-count { font-size:13px; color:var(--text-m); margin-left:8px; font-weight:400; }
+    .amort-body { display:none; padding:0 24px 24px; }
+    .amort-body.open { display:block; }
+    .chart-wrap { height:170px; margin-bottom:20px; margin-top:8px; }
+    .amort-table { width:100%; border-collapse:collapse; font-size:13px; }
+    .amort-table th { text-align:right; color:var(--text-s); font-weight:500; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; padding:9px 11px; border-bottom:1px solid var(--border); }
+    .amort-table th:first-child,.amort-table th:nth-child(2) { text-align:left; }
+    .amort-table td { text-align:right; padding:10px 11px; border-bottom:1px solid var(--border); color:var(--text-m); }
+    .amort-table td:first-child,.amort-table td:nth-child(2) { text-align:left; color:var(--text); font-weight:500; }
+    .amort-table tr:last-child td { border-bottom:none; }
+    .amort-table tr:hover td { background:var(--bg2); }
+
+    /* AFFILIATE */
+    .affiliate-section { background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%); border:1px solid var(--border-a); border-radius:var(--radius); padding:20px 24px; }
+    .affiliate-section h3 { font-size:13px; font-weight:600; color:var(--text-m); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:14px; }
+    .affiliate-card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px; display:flex; align-items:center; gap:16px; }
+    .affiliate-info { flex:1; }
+    .affiliate-info strong { display:block; font-size:15px; font-weight:600; margin-bottom:3px; }
+    .affiliate-info span { font-size:13px; color:var(--text-m); }
+    .affiliate-info small { display:block; font-size:11px; color:var(--text-s); margin-top:5px; }
+    .affiliate-btn { background:var(--accent); color:#fff; border:none; border-radius:var(--radius-s); padding:11px 18px; font-family:inherit; font-size:14px; font-weight:600; cursor:pointer; white-space:nowrap; transition:background 200ms; display:flex; align-items:center; gap:7px; text-decoration:none; }
+    .affiliate-btn:hover { background:var(--accent-h); }
+    .annonse-label { font-size:10px; color:var(--text-s); margin-bottom:8px; }
+
+    /* INLINE AD (native i innhold) */
+    .inline-ad { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:16px 20px; margin:28px 0; display:flex; align-items:center; justify-content:center; min-height:90px; color:var(--text-s); font-size:11px; gap:8px; }
+
+    /* CONTENT */
+    .content-wrap { max-width:860px; margin:0 auto; padding:40px 24px 64px; }
+    .content-wrap h2 { font-size:22px; font-weight:700; margin:32px 0 12px; letter-spacing:-0.3px; }
+    .content-wrap h3 { font-size:17px; font-weight:600; margin:24px 0 10px; color:var(--accent); }
+    .content-wrap p { color:var(--text-m); margin-bottom:14px; line-height:1.75; }
+    .content-wrap ul { list-style:none; margin:0 0 16px 0; padding:0; }
+    .content-wrap ul li { color:var(--text-m); padding:6px 0 6px 20px; position:relative; line-height:1.7; }
+    .content-wrap ul li::before { content:'→'; position:absolute; left:0; color:var(--accent); font-size:12px; top:8px; }
+    .pros-cons { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0; }
+    .pros-box,.cons-box { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; }
+    .pros-box { border-top:3px solid var(--accent); }
+    .cons-box { border-top:3px solid #EF4444; }
+    .pros-box h4 { color:var(--accent); font-size:13px; font-weight:700; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.8px; }
+    .cons-box h4 { color:#EF4444; font-size:13px; font-weight:700; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.8px; }
+    .pros-box li::before { color:var(--accent) !important; content:'✓' !important; }
+    .cons-box li::before { color:#EF4444 !important; content:'✗' !important; }
+    .info-box { background:var(--card); border:1px solid var(--border-a); border-radius:var(--radius); padding:20px 22px; margin:20px 0; }
+    .info-box h4 { font-size:14px; font-weight:600; color:var(--accent); margin-bottom:8px; }
+    .info-box p { margin-bottom:0; font-size:14px; }
+    .cta-box { background:linear-gradient(135deg,var(--bg2),var(--bg3)); border:1px solid var(--border-a); border-radius:var(--radius); padding:24px; margin:28px 0; text-align:center; }
+    .cta-box h4 { font-size:16px; font-weight:600; margin-bottom:8px; }
+    .cta-box p { font-size:14px; color:var(--text-m); margin-bottom:16px; }
+    .cta-btn { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; text-decoration:none; padding:12px 24px; border-radius:var(--radius-s); font-size:14px; font-weight:600; transition:background 200ms; }
+    .cta-btn:hover { background:var(--accent-h); }
+    .faq-item { border-bottom:1px solid var(--border); padding:16px 0; }
+    .faq-item:last-child { border-bottom:none; }
+    .faq-q { font-size:15px; font-weight:600; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .faq-a { display:none; margin-top:10px; color:var(--text-m); font-size:14px; line-height:1.75; }
+    .faq-a.open { display:block; }
+    .guide-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px; margin:24px 0; }
+    .guide-card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:22px; text-decoration:none; transition:all 200ms; display:block; }
+    .guide-card:hover { border-color:var(--accent); transform:translateY(-2px); }
+    .guide-card h3 { font-size:16px; font-weight:600; color:var(--text); margin-bottom:8px; }
+    .guide-card p { font-size:13px; color:var(--text-m); margin:0; line-height:1.6; }
+    .guide-card .arrow { display:inline-block; margin-top:12px; color:var(--accent); font-size:13px; font-weight:600; }
+
+    /* FOOTER */
+    footer { background:var(--bg2); border-top:1px solid var(--border); padding:36px 24px; margin-top:32px; }
+    .footer-inner { max-width:1400px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 2fr; gap:36px; }
+    .footer-brand p { font-size:13px; color:var(--text-m); margin-top:10px; line-height:1.7; }
+    footer h4 { font-size:12px; font-weight:600; color:var(--text-m); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:12px; }
+    footer ul { list-style:none; }
+    footer ul li { margin-bottom:7px; }
+    footer ul a { color:var(--text-m); text-decoration:none; font-size:13px; transition:color 200ms; }
+    footer ul a:hover { color:var(--accent); }
+    .footer-disclaimer { font-size:12px; color:var(--text-s); line-height:1.7; }
+    .footer-bottom { max-width:1400px; margin:28px auto 0; padding-top:18px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--text-s); }
+
+    /* RESPONSIVE */
+    @media (max-width:1100px) {
+      .main-wrap { grid-template-columns:1fr; padding:20px 16px 40px; }
+      .ad-sidebar { display:none; }
+    }
+    @media (max-width:768px) {
+      html { overflow-x:hidden; max-width:100vw; }
+      body { overflow-x:hidden; max-width:100vw; }
+      * { max-width:100%; }
+      .main-wrap { width:100%; max-width:100%; }
+      .hero { padding:32px 16px 24px; }
+      .hero h1 { font-size:22px; }
+      .top-banner-ad { display:none; }
+      .main-wrap { padding:16px 16px 40px; }
+      .calc-grid { grid-template-columns:1fr; gap:16px; }
+      .card, .result-card { padding:18px 16px; }
+      .card h3 { font-size:10px; }
+      .two-col { grid-template-columns:1fr; gap:12px; }
+      .select-row { grid-template-columns:1fr 1fr; }
+      .input-wrap input[type=number] { font-size:16px; }
+      .result-amount { font-size:32px; }
+      .amort-card { overflow-x:hidden; }
+      .amort-header { padding:14px 16px; }
+      .amort-body { padding:0 12px 16px; overflow-x:auto; }
+      .amort-table { min-width:480px; }
+      .chart-wrap { height:140px; }
+      .affiliate-card { flex-direction:column; align-items:flex-start; gap:12px; }
+      .affiliate-btn { width:100%; justify-content:center; }
+      .affiliate-section { padding:16px; }
+      .nav-links { display:none; }
+      .nav-links.open { display:flex; flex-direction:column; position:absolute; top:64px; left:0; right:0; background:var(--bg); border-bottom:1px solid var(--border); padding:12px 16px; z-index:49; gap:2px; }
+      .hamburger { display:flex; }
+      .footer-inner { grid-template-columns:1fr; gap:20px; }
+      .footer-bottom { flex-direction:column; gap:8px; text-align:center; }
+      .pros-cons { grid-template-columns:1fr; }
+      .content-wrap { padding:28px 16px 48px; }
+      .content-wrap h2 { font-size:18px; }
+      .inline-ad { min-height:60px; }
+      .slider-field { margin-bottom:16px; }
+      .toggle-row { gap:6px; }
+      .toggle-btn { font-size:12px; padding:8px 6px; }
+      .toggle-row { width:100%; }
+      .toggle-row .toggle-btn { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+      .select-row { width:100%; }
+      .select-row .select-wrap { min-width:0; }
+      .select-wrap select { width:100%; min-width:0; }
+      .input-wrap { width:100%; }
+      .input-wrap input[type=number] { width:100%; min-width:0; }
+      .card { width:100%; overflow:hidden; }
+      .result-card { width:100%; overflow:hidden; }
+      .calc-section { width:100%; }
+      .tabs { padding:16px 16px 0; gap:6px; }
+      .tab-btn { padding:8px 14px; font-size:13px; }
+    }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none !important; animation:none !important; } }
+</style>
 </head>
 <body>
-<div class="wrap">
-  <a href="/" class="back">← Tilbake til forsiden</a>
-  <h1>Personvernerklæring</h1>
-  <p class="updated">Sist oppdatert: Juni 2026</p>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><img src="/logo.png" alt="Lånekalken logo" width="32" height="32"><span>Låne<em>kalken</em></span></a>
+    <ul class="nav-links" id="navLinks"><li><a href="/" class="active">Lånekalkulator</a></li><li><a href="/boliglan" class="">Boliglån</a></li><li><a href="/billan" class="">Billån</a></li><li><a href="/forbrukslan" class="">Forbrukslån</a></li><li><a href="/kredittkort" class="">Kredittkort</a></li><li><a href="/sparing" class="">Sparing</a></li><li class="nav-dropdown"><a href="/guider" class="">Guider ▾</a><div class="nav-dropdown-menu"><a href="/guider">Alle guider</a><a href="/guider/refinansiering">Refinansiering</a><a href="/guider/omstartslan">Omstartslån</a><a href="/guider/inkasso">Inkasso</a><a href="/guider/kredittsjekk">Kredittsjekk</a></div></li></ul>
+    <button class="hamburger" id="hamburger" aria-label="Åpne meny"><span></span><span></span><span></span></button>
+  </div>
+</nav>
 
-  <p>Denne personvernerklæringen beskriver hvordan <strong>Lånekalken</strong> («vi», «oss», «nettsiden») samler inn, bruker og beskytter informasjon om deg som besøker <strong>lånekalken.no</strong>. Vi behandler personopplysninger i samsvar med EUs personvernforordning (GDPR) og norsk personopplysningslov.</p>
+<section class="hero">
+  <h1>Personvernerklæring</h1>
+  <p>Sist oppdatert: Juli 2026</p>
+</section>
+<div class="main-wrap">
+<main>
+<div class="content-wrap">
+
+  <p>Denne personvernerklæringen beskriver hvordan Lånekalken («vi», «oss», «nettsiden») samler inn, bruker og beskytter informasjon om deg som besøker <strong>lånekalken.no</strong>. Vi behandler personopplysninger i samsvar med EUs personvernforordning (GDPR) og norsk personopplysningslov.</p>
 
   <h2>1. Behandlingsansvarlig</h2>
-  <p>Behandlingsansvarlig for personopplysninger på denne nettsiden er driftsansvarlig for <strong>lånekalken.no</strong>. For spørsmål om personvern, ta kontakt på: <strong>post@lånekalken.no</strong></p>
+  <p>Behandlingsansvarlig for personopplysninger på denne nettsiden er driftsansvarlig for lånekalken.no. For spørsmål om personvern, ta kontakt på: <a href="mailto:post@lånekalken.no" style="color:var(--accent)">post@lånekalken.no</a></p>
 
   <h2>2. Hvilke opplysninger samler vi inn?</h2>
-  <p>Vi samler ikke inn personopplysninger direkte. Tredjepartstjenester vi bruker kan imidlertid samle inn følgende:</p>
+  <p>Vi samler ikke inn personopplysninger direkte. Tredjepartstjenester vi bruker kan samle inn følgende:</p>
   <ul>
     <li>IP-adresse (anonymisert av Google Analytics)</li>
     <li>Nettlesertype og enhetsinformasjon</li>
@@ -53,80 +299,218 @@
   <h2>3. Informasjonskapsler (cookies)</h2>
   <p>Vi bruker informasjonskapsler for å gi deg en bedre brukeropplevelse og for å analysere trafikk. Du kan når som helst endre dine valg via cookie-banneret.</p>
 
-  <div class="box">
-    <h3>Nødvendige cookies</h3>
-    <p>Disse er nødvendige for at nettsiden skal fungere og kan ikke avslås.</p>
-    <table>
-      <thead><tr><th>Navn</th><th>Formål</th><th>Varighet</th></tr></thead>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:16px 0">
+    <table style="width:100%;border-collapse:collapse;font-size:14px">
+      <thead><tr style="background:var(--bg2)">
+        <th style="text-align:left;padding:12px 16px;color:var(--text-m);font-size:12px;text-transform:uppercase;letter-spacing:0.8px">Kategori</th>
+        <th style="text-align:left;padding:12px 16px;color:var(--text-m);font-size:12px;text-transform:uppercase;letter-spacing:0.8px">Navn</th>
+        <th style="text-align:left;padding:12px 16px;color:var(--text-m);font-size:12px;text-transform:uppercase;letter-spacing:0.8px">Formål</th>
+        <th style="text-align:left;padding:12px 16px;color:var(--text-m);font-size:12px;text-transform:uppercase;letter-spacing:0.8px">Varighet</th>
+      </tr></thead>
       <tbody>
-        <tr><td>cookie_consent_v1</td><td>Lagrer dine cookie-preferanser</td><td>1 år</td></tr>
+        <tr style="border-top:1px solid var(--border)"><td style="padding:12px 16px;color:var(--accent)">Nødvendig</td><td style="padding:12px 16px">cookie_consent_v1</td><td style="padding:12px 16px;color:var(--text-m)">Lagrer dine cookie-valg</td><td style="padding:12px 16px;color:var(--text-m)">1 år</td></tr>
+        <tr style="border-top:1px solid var(--border);background:var(--bg2)"><td style="padding:12px 16px;color:var(--text-m)">Statistikk</td><td style="padding:12px 16px">_ga, _ga_*, _gid</td><td style="padding:12px 16px;color:var(--text-m)">Google Analytics - trafikkanalyse</td><td style="padding:12px 16px;color:var(--text-m)">2 år / 24 timer</td></tr>
+        <tr style="border-top:1px solid var(--border)"><td style="padding:12px 16px;color:var(--text-m)">Markedsføring</td><td style="padding:12px 16px">IDE, test_cookie</td><td style="padding:12px 16px;color:var(--text-m)">Google AdSense - annonsering</td><td style="padding:12px 16px;color:var(--text-m)">1 år / 15 min</td></tr>
       </tbody>
     </table>
-  </div>
-
-  <div class="box">
-    <h3>Statistikk-cookies (Google Analytics)</h3>
-    <p>Brukes til å forstå hvordan besøkende bruker nettsiden. Aktiveres kun med ditt samtykke.</p>
-    <table>
-      <thead><tr><th>Navn</th><th>Formål</th><th>Varighet</th></tr></thead>
-      <tbody>
-        <tr><td>_ga</td><td>Identifiserer unike besøkende</td><td>2 år</td></tr>
-        <tr><td>_ga_*</td><td>Lagrer sesjonsdata</td><td>2 år</td></tr>
-        <tr><td>_gid</td><td>Identifiserer sesjoner</td><td>24 timer</td></tr>
-      </tbody>
-    </table>
-    <p>Google Analytics er konfigurert med IP-anonymisering. Data behandles av Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Les <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googles personvernpolicy</a>.</p>
-  </div>
-
-  <div class="box">
-    <h3>Markedsføring-cookies (Google AdSense)</h3>
-    <p>Brukes til å vise deg relevante annonser. Aktiveres kun med ditt samtykke.</p>
-    <table>
-      <thead><tr><th>Navn</th><th>Formål</th><th>Varighet</th></tr></thead>
-      <tbody>
-        <tr><td>IDE</td><td>Google Ads – brukeratferd for annonsemåling</td><td>1 år</td></tr>
-        <tr><td>test_cookie</td><td>Tester om nettleseren støtter cookies</td><td>15 min</td></tr>
-        <tr><td>DSID</td><td>Identifiserer bruker på tvers av Google-tjenester</td><td>2 uker</td></tr>
-      </tbody>
-    </table>
-    <p>Annonser leveres av Google AdSense. Google kan bruke data til å vise personaliserte annonser basert på dine interesser. Les <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googles personvernpolicy</a> eller administrer annonseinnstillinger på <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.</p>
   </div>
 
   <h2>4. Google Consent Mode</h2>
-  <p>Vi bruker Google Consent Mode v2. Dette betyr at Google-tjenester (Analytics og AdSense) kjører i begrenset modus inntil du gir samtykke. Uten samtykke samles ingen personlig data inn, men aggregerte og anonymiserte målinger kan fortsatt forekomme for modellering.</p>
+  <p>Vi bruker Google Consent Mode v2. Dette betyr at Google-tjenester kjører i begrenset modus inntil du gir samtykke. Uten samtykke samles ingen personlig data inn.</p>
 
-  <h2>5. Tredjeparter og dataoverføring</h2>
-  <p>Vi bruker følgende tredjepartstjenester som kan behandle data:</p>
-  <table>
-    <thead><tr><th>Tjeneste</th><th>Formål</th><th>Behandlingsland</th><th>Mer info</th></tr></thead>
-    <tbody>
-      <tr><td>Google Analytics</td><td>Trafikkanalyse</td><td>USA/EU</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Personvernpolicy</a></td></tr>
-      <tr><td>Google AdSense</td><td>Annonsering</td><td>USA/EU</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Personvernpolicy</a></td></tr>
-      <tr><td>Google Tag Manager</td><td>Tagghåndtering</td><td>USA/EU</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Personvernpolicy</a></td></tr>
-    </tbody>
-  </table>
+  <h2>5. Tredjeparter</h2>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:16px 0">
+    <table style="width:100%;border-collapse:collapse;font-size:14px">
+      <thead><tr style="background:var(--bg2)">
+        <th style="text-align:left;padding:12px 16px;color:var(--text-m);font-size:12px;text-transform:uppercase">Tjeneste</th>
+        <th style="text-align:left;padding:12px 16px;color:var(--text-m);font-size:12px;text-transform:uppercase">Formål</th>
+        <th style="text-align:left;padding:12px 16px;color:var(--text-m);font-size:12px;text-transform:uppercase">Land</th>
+      </tr></thead>
+      <tbody>
+        <tr style="border-top:1px solid var(--border)"><td style="padding:12px 16px">Google Analytics</td><td style="padding:12px 16px;color:var(--text-m)">Trafikkanalyse</td><td style="padding:12px 16px;color:var(--text-m)">USA/EU</td></tr>
+        <tr style="border-top:1px solid var(--border);background:var(--bg2)"><td style="padding:12px 16px">Google AdSense</td><td style="padding:12px 16px;color:var(--text-m)">Annonsering</td><td style="padding:12px 16px;color:var(--text-m)">USA/EU</td></tr>
+        <tr style="border-top:1px solid var(--border)"><td style="padding:12px 16px">Google Tag Manager</td><td style="padding:12px 16px;color:var(--text-m)">Tagghåndtering</td><td style="padding:12px 16px;color:var(--text-m)">USA/EU</td></tr>
+      </tbody>
+    </table>
+  </div>
   <p>Overføring til USA skjer på grunnlag av EUs standard kontraktsklausuler (SCC) og Googles deltakelse i EU-U.S. Data Privacy Framework.</p>
 
-  <h2>6. Dine rettigheter</h2>
-  <p>Under GDPR har du følgende rettigheter:</p>
+  <h2>6. Affiliate-lenker</h2>
+  <p>Lånekalken inneholder affiliate-lenker til finansinstitusjoner. Når du klikker på slike lenker kan vi motta en provisjon. Dette påvirker aldri innholdet på siden - vi er uavhengige og har ingen kommersielle bindinger til spesifikke banker.</p>
+
+  <h2>7. Dine rettigheter</h2>
   <ul>
     <li><strong>Innsyn:</strong> Du kan be om innsyn i hvilke opplysninger vi har om deg</li>
     <li><strong>Retting:</strong> Du kan be om at feilaktige opplysninger rettes</li>
-    <li><strong>Sletting:</strong> Du kan be om at opplysninger slettes («retten til å bli glemt»)</li>
-    <li><strong>Begrensning:</strong> Du kan be om begrensning av behandlingen</li>
-    <li><strong>Dataportabilitet:</strong> Du kan be om å få utlevert dine data i maskinlesbart format</li>
-    <li><strong>Innsigelse:</strong> Du kan protestere mot behandling basert på berettiget interesse</li>
-    <li><strong>Trekke samtykke:</strong> Du kan når som helst trekke tilbake ditt samtykke</li>
+    <li><strong>Sletting:</strong> Du kan be om at opplysninger slettes</li>
+    <li><strong>Trekke samtykke:</strong> Du kan når som helst trekke tilbake samtykke til cookies</li>
+    <li><strong>Klage:</strong> Du har rett til å klage til <a href="https://www.datatilsynet.no" target="_blank" rel="noopener" style="color:var(--accent)">Datatilsynet</a></li>
   </ul>
-  <p>For å utøve dine rettigheter, kontakt oss på <strong>post@lånekalken.no</strong>. Du har også rett til å klage til <a href="https://www.datatilsynet.no" target="_blank" rel="noopener">Datatilsynet</a>.</p>
 
-  <h2>7. Endre cookie-innstillinger</h2>
-  <p>Du kan når som helst endre dine cookie-innstillinger ved å klikke på knappen under:</p>
-  <button onclick="localStorage.removeItem('cookie_consent_v1');location.reload();" style="background:#0DAF7B;color:#fff;border:none;border-radius:8px;padding:12px 20px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;margin-top:8px">Endre cookie-innstillinger</button>
+  <h2>8. Endre cookie-innstillinger</h2>
+  <p>Du kan når som helst endre dine cookie-innstillinger:</p>
+  <button onclick="localStorage.removeItem('cookie_consent_v1');location.reload();" style="background:var(--accent);color:#121C2D;border:none;border-radius:8px;padding:12px 20px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;margin-top:8px">Endre cookie-innstillinger</button>
 
-  <h2>8. Endringer i personvernerklæringen</h2>
-  <p>Vi kan oppdatere denne erklæringen ved behov. Vesentlige endringer vil varsles tydelig på nettsiden. Vi anbefaler at du leser erklæringen jevnlig.</p>
+  <h2>9. Kontakt</h2>
+  <p>For spørsmål om personvern: <a href="mailto:post@lånekalken.no" style="color:var(--accent)">post@lånekalken.no</a></p>
+
+  <h2>10. Endringer</h2>
+  <p>Vi kan oppdatere denne erklæringen ved behov. Vi anbefaler at du leser erklæringen jevnlig.</p>
 
 </div>
+</main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo"><img src="/logo.png" alt="" width="28"><span style="font-size:15px">Låne<em>kalken</em></span></a>
+      <p>Lånekalken gir deg oversikt over total kostnad på lånet, renter og gebyr, effektiv rente og nedbetalingsplan. Gratis verktøy for deg som vil forstå lånekostnadene dine.</p>
+    </div>
+    <div><h4>Kalkulatorer</h4><ul>
+      <li><a href="/">Lånekalkulator</a></li>
+      <li><a href="/boliglan">Boliglån</a></li>
+      <li><a href="/billan">Billån</a></li>
+      <li><a href="/forbrukslan">Forbrukslån</a></li>
+      <li><a href="/kredittkort">Kredittkort</a></li>
+      <li><a href="/sparing">Sparing</a></li>
+    </ul></div>
+    <div><h4>Guider</h4><ul>
+      <li><a href="/guider">Alle guider</a></li>
+      <li><a href="/guider/refinansiering">Refinansiering</a></li>
+      <li><a href="/guider/omstartslan">Omstartslån</a></li>
+      <li><a href="/guider/inkasso">Inkasso</a></li>
+      <li><a href="/guider/kredittsjekk">Kredittsjekk</a></li>
+    </ul></div>
+    <div class="footer-disclaimer"><h4>Viktig informasjon</h4>
+      <p>Kalkulatoren gir veiledende beregninger. Faktiske lånevilkår varierer mellom långivere. Kontakt din bank for nøyaktige tilbud. Lånekalken er ikke finansiell rådgivning.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Lånekalken. Alle rettigheter reservert.</span>
+    <a href="#" style="color:var(--text-s);text-decoration:none">Personvernerklæring</a>
+  </div>
+</footer>
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  const nav = document.getElementById('navLinks');
+  const open = nav.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+
+function toggleFaq(el) {
+  const a = el.nextElementSibling;
+  const isOpen = a.classList.toggle('open');
+  const svg = el.querySelector('svg');
+  if (svg) svg.style.transform = isOpen ? 'rotate(180deg)' : '';
+}
+function toggleAdv() {
+  const p = document.getElementById('advPanel');
+  const open = p.classList.toggle('open');
+  const btn = document.getElementById('advBtn');
+  if (btn) { const svg = btn.querySelector('svg'); if (svg) svg.style.transform = open ? 'rotate(180deg)' : ''; }
+}
+function toggleAmort() {
+  const b = document.getElementById('amortBody');
+  const open = b.classList.toggle('open');
+  const chev = document.getElementById('amortChevron');
+  if (chev) chev.style.transform = open ? '' : 'rotate(180deg)';
+}
+</script>
+<script src="/cookie_banner.js"></script>
+
 </body>
-</html>
+</html><script>
+const fmt = n => Math.round(n).toLocaleString('nb-NO') + ' kr';
+const fmtPct = n => n.toFixed(2).replace('.',',') + ' %';
+
+function buildSchedule(P, r, n, fee, type) {
+  const rows = []; let balance = P;
+  const serieAvdrag = P / n;
+  for (let i = 1; i <= n; i++) {
+    const interest = balance * r;
+    let principal, payment;
+    if (type === 'annuitet') {
+      payment = r > 0 ? P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1) : P/n;
+      principal = payment - interest;
+    } else { principal = serieAvdrag; payment = principal + interest; }
+    balance = Math.max(0, balance - principal);
+    rows.push({ term:i, payment:payment+fee, interest, fee, principal, balance });
+  }
+  return rows;
+}
+
+function calcEff(P, monthly, n, fees) {
+  const totalP = P - fees;
+  if (totalP <= 0 || n <= 0) return 0;
+  let r = 0.005;
+  for (let i = 0; i < 100; i++) {
+    const pn = Math.pow(1+r,n);
+    const f = totalP * r * pn / (pn-1) - monthly;
+    const df = totalP * (pn*(1+r*n) - Math.pow(1+r,n+1) + pn) / Math.pow(pn-1,2);
+    const rn = r - f/df;
+    if (Math.abs(rn-r) < 1e-10) break;
+    r = rn;
+  }
+  return (Math.pow(1+r,12)-1)*100;
+}
+
+function renderChart(sched) {
+  const ctx = document.getElementById('amortChart').getContext('2d');
+  if (window._chart) window._chart.destroy();
+  window._chart = new Chart(ctx, {
+    type:'line',
+    data:{ labels:sched.map(r=>r.term), datasets:[{ label:'Restgjeld', data:sched.map(r=>Math.round(r.balance)), borderColor:'#0DAF7B', backgroundColor:'rgba(13,175,123,0.1)', fill:true, tension:0.4, pointRadius:0, borderWidth:2 }] },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>'Restgjeld: '+Math.round(c.parsed.y).toLocaleString('nb-NO')+' kr'}} }, scales:{ x:{ticks:{color:'#64748B',maxTicksLimit:6,font:{size:11}},grid:{color:'rgba(255,255,255,0.04)'}}, y:{ticks:{color:'#64748B',font:{size:11},callback:v=>(v/1000).toFixed(0)+'k'},grid:{color:'rgba(255,255,255,0.04)'}} } }
+  });
+}
+
+function renderTable(sched) {
+  document.getElementById('amortTbody').innerHTML = sched.slice(0,12).map(r =>
+    '<tr><td>'+r.term+'</td><td>'+Math.round(r.payment).toLocaleString('nb-NO')+' kr</td><td>'+Math.round(r.interest).toLocaleString('nb-NO')+' kr</td><td>'+Math.round(r.fee).toLocaleString('nb-NO')+' kr</td><td>'+Math.round(r.principal).toLocaleString('nb-NO')+' kr</td><td>'+Math.round(r.balance).toLocaleString('nb-NO')+' kr</td></tr>'
+  ).join('');
+}
+
+function updateSliderFill(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const pct = ((el.value - el.min) / (el.max - el.min)) * 100;
+  const fill = document.getElementById(id+'Fill');
+  if (fill) fill.style.width = pct + '%';
+}
+
+let loanType = 'annuitet';
+function setType(t) {
+  loanType=t;
+  document.getElementById('togAnn').classList.toggle('active',t==='annuitet');
+  document.getElementById('togSer').classList.toggle('active',t==='serie');
+  calculate();
+}
+function calculate() {
+  const tpy=parseInt(document.getElementById('tpy').value)||12;
+  const P=parseFloat(document.getElementById('loanAmt').value)||0;
+  const r=parseFloat(document.getElementById('rate').value)/100/tpy;
+  const n=((parseInt(document.getElementById('yrs').value)||0)*12+(parseInt(document.getElementById('mths').value)||0))*tpy/12;
+  const fee=parseFloat(document.getElementById('termFee').value)||0;
+  const estFee=parseFloat(document.getElementById('estFee').value)||0;
+  const tingl=parseFloat(document.getElementById('tinglysning').value)||0;
+  const incl=document.getElementById('inclFees').checked;
+  const loanP=incl?P+estFee+tingl:P;
+  if(!loanP||!n) return;
+  const sched=buildSchedule(loanP,r,n,fee,loanType);
+  const monthly=sched[0].payment;
+  const totalPay=sched.reduce((s,r)=>s+r.payment,0)+(incl?0:estFee+tingl);
+  document.getElementById('monthly').textContent=fmt(monthly);
+  document.getElementById('totalCost').textContent=fmt(totalPay-P);
+  document.getElementById('totalPay').textContent=fmt(totalPay);
+  document.getElementById('effRate').textContent=fmtPct(calcEff(P,monthly,n,incl?0:estFee+tingl));
+  document.getElementById('termCount').textContent='('+n+' terminer)';
+  renderChart(sched); renderTable(sched);
+}
+['loanAmt','rate','yrs','mths','termFee','estFee','tinglysning','tpy'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el){el.addEventListener('input',calculate);el.addEventListener('change',calculate);}
+});
+document.getElementById('inclFees').addEventListener('change',calculate);
+calculate();
+</script></body></html>
