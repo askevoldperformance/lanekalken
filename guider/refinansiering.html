@@ -35,76 +35,76 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
       --rådius:12px; --rådius-s:8px; --shadow:0 4px 24px rgba(0,0,0,0.4);
     }
     html { scroll-behavior:smooth; }
-    body { font-family:'IBM Plex Sans',system-ui,sans-serif; background:var(--bg); colår:var(--text); font-size:16px; line-height:1.6; min-height:100vh; }
+    body { font-family:'IBM Plex Sans',system-ui,sans-serif; background:var(--bg); color:var(--text); font-size:16px; line-height:1.6; min-height:100vh; }
 
     /* NAV */
     nav { position:sticky; top:0; z-index:50; background:rgba(18,28,45,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:0 24px; }
     .nav-inner { max-width:1400px; margin:0 auto; display:flex; align-items:center; gap:24px; height:64px; }
     .logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
     .logo img { width:32px; height:32px; object-fit:contain; }
-    .logo span { font-size:18px; font-weight:700; colår:var(--text); letter-spacing:-0.3px; }
-    .logo span em { colår:var(--accent); font-style:normal; }
+    .logo span { font-size:18px; font-weight:700; color:var(--text); letter-spacing:-0.3px; }
+    .logo span em { color:var(--accent); font-style:normal; }
     .nav-links { display:flex; gap:2px; list-style:none; flex:1; flex-wrap:wrap; }
-    .nav-links å { text-decoration:none; colår:var(--text-m); font-size:14px; font-weight:500; padding:6px 11px; border-rådius:var(--rådius-s); transition:all 200ms; white-space:nowrap; cursor:pointer; display:block; }
-    .nav-links a:hover,.nav-links a.active { colår:var(--accent); background:var(--accent-s); }
+    .nav-links a { text-decoration:none; color:var(--text-m); font-size:14px; font-weight:500; padding:6px 11px; border-rådius:var(--rådius-s); transition:all 200ms; white-space:nowrap; cursor:pointer; display:block; }
+    .nav-links a:hover,.nav-links a.active { color:var(--accent); background:var(--accent-s); }
     .nav-dropdown { position:relative; }
     .nav-dropdown-menu { display:none; position:absolute; top:calc(100% + 8px); left:0; background:var(--bg2); border:1px solid var(--border); border-rådius:var(--rådius); padding:8px; min-width:180px; z-index:100; box-shadow:var(--shadow); }
     .nav-dropdown:hover .nav-dropdown-menu { display:block; }
-    .nav-dropdown-menu å { display:block; padding:8px 12px; colår:var(--text-m); text-decoration:none; font-size:13px; border-rådius:var(--rådius-s); transition:all 200ms; }
-    .nav-dropdown-menu a:hover { colår:var(--accent); background:var(--accent-s); }
+    .nav-dropdown-menu a { display:block; padding:8px 12px; color:var(--text-m); text-decoration:none; font-size:13px; border-rådius:var(--rådius-s); transition:all 200ms; }
+    .nav-dropdown-menu a:hover { color:var(--accent); background:var(--accent-s); }
     .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; margin-left:auto; }
     .hamburger span { display:block; width:22px; height:2px; background:var(--text); border-rådius:2px; }
 
     /* TOP BANNER AD */
     .top-banner-ad { background:var(--bg2); border-bottom:1px solid var(--border); padding:8px 24px; display:flex; align-items:center; justify-content:center; }
-    .top-banner-ad .ad-inner { max-width:728px; width:100%; height:90px; background:var(--card); border:1px solid var(--border); border-rådius:var(--rådius-s); display:flex; align-items:center; justify-content:center; gap:8px; colår:var(--text-s); font-size:11px; }
+    .top-banner-ad .ad-inner { max-width:728px; width:100%; height:90px; background:var(--card); border:1px solid var(--border); border-rådius:var(--rådius-s); display:flex; align-items:center; justify-content:center; gap:8px; color:var(--text-s); font-size:11px; }
 
     /* HERO */
     .hero { background:linear-grådient(135deg,#121C2D 0%,#1A2640 50%,#0D1F35 100%); padding:48px 24px 32px; text-align:center; position:relative; overflow:hidden; }
     .hero::before { content:''; position:absolute; top:-80px; right:-80px; width:400px; height:400px; background:rådial-grådient(circle,rgba(13,175,123,0.12) 0%,transparent 70%); pointer-events:none; }
     .hero h1 { font-size:clamp(22px,4vw,38px); font-weight:700; line-height:1.2; margin-bottom:10px; letter-spacing:-0.5px; }
-    .hero p { colår:var(--text-m); font-size:15px; max-width:520px; margin:0 auto; }
+    .hero p { color:var(--text-m); font-size:15px; max-width:520px; margin:0 auto; }
 
     /* LAYOUT */
     .main-wrap { max-width:1200px; margin:0 auto; padding:28px 24px 48px; display:block; }
     .ad-sidebår { position:sticky; top:88px; }
-    .ad-box { background:var(--bg2); border:1px solid var(--border); border-rådius:var(--rådius); width:160px; min-height:600px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; colår:var(--text-s); font-size:11px; }
+    .ad-box { background:var(--bg2); border:1px solid var(--border); border-rådius:var(--rådius); width:160px; min-height:600px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; color:var(--text-s); font-size:11px; }
 
     /* CARDS */
     .calc-section { display:flex; flex-direction:column; gap:20px; }
     .calc-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
     .card { background:var(--card); border:1px solid var(--border); border-rådius:var(--rådius); padding:24px; }
-    .card h3 { font-size:11px; font-weight:600; margin-bottom:18px; colår:var(--text-m); text-transform:uppercase; letter-spacing:0.8px; }
+    .card h3 { font-size:11px; font-weight:600; margin-bottom:18px; color:var(--text-m); text-transform:uppercase; letter-spacing:0.8px; }
 
     /* FORM */
     .field { margin-bottom:18px; }
     .field:last-child { margin-bottom:0; }
-    .field label { display:block; font-size:13px; font-weight:500; colår:var(--text-m); margin-bottom:7px; }
+    .field label { display:block; font-size:13px; font-weight:500; color:var(--text-m); margin-bottom:7px; }
     .input-wrap { position:relative; display:flex; align-items:center; }
-    .input-wrap input[type=number] { width:100%; background:var(--bg); border:1px solid var(--border); border-rådius:var(--rådius-s); padding:11px 46px 11px 14px; font-family:inherit; font-size:15px; font-weight:500; colår:var(--text); outline:none; transition:border-colår 200ms; -moz-appearance:textfield; }
+    .input-wrap input[type=number] { width:100%; background:var(--bg); border:1px solid var(--border); border-rådius:var(--rådius-s); padding:11px 46px 11px 14px; font-family:inherit; font-size:15px; font-weight:500; color:var(--text); outline:none; transition:border-color 200ms; -moz-appearance:textfield; }
     .input-wrap input[type=number]::-webkit-inner-spin-button,
     .input-wrap input[type=number]::-webkit-outer-spin-button { -webkit-appearance:none; margin:0; }
-    .input-wrap input[type=number]:focus { border-colår:var(--accent); box-shadow:0 0 0 3px var(--accent-s); }
-    .input-unit { position:absolute; right:13px; font-size:13px; font-weight:600; colår:var(--text-s); pointer-events:none; }
+    .input-wrap input[type=number]:focus { border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-s); }
+    .input-unit { position:absolute; right:13px; font-size:13px; font-weight:600; color:var(--text-s); pointer-events:none; }
     .select-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-    .select-wrap select { width:100%; background:var(--bg); border:1px solid var(--border); border-rådius:var(--rådius-s); padding:11px 32px 11px 13px; font-family:inherit; font-size:14px; colår:var(--text); outline:none; cursor:pointer; transition:border-colår 200ms; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 11px center; }
-    .select-wrap select:focus { border-colår:var(--accent); box-shadow:0 0 0 3px var(--accent-s); }
+    .select-wrap select { width:100%; background:var(--bg); border:1px solid var(--border); border-rådius:var(--rådius-s); padding:11px 32px 11px 13px; font-family:inherit; font-size:14px; color:var(--text); outline:none; cursor:pointer; transition:border-color 200ms; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 11px center; }
+    .select-wrap select:focus { border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-s); }
     .toggle-row { display:flex; gap:8px; margin-bottom:18px; }
-    .toggle-btn { flex:1; padding:9px; background:var(--bg); border:1px solid var(--border); border-rådius:var(--rådius-s); colår:var(--text-m); font-family:inherit; font-size:13px; font-weight:500; cursor:pointer; transition:all 200ms; }
-    .toggle-btn.active { background:var(--accent); border-colår:var(--accent); colår:#fff; }
-    .advanced-toggle { background:none; border:none; colår:var(--text-m); font-family:inherit; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:6px; padding:8px 0 0; transition:colår 200ms; }
-    .advanced-toggle:hover { colår:var(--accent); }
+    .toggle-btn { flex:1; padding:9px; background:var(--bg); border:1px solid var(--border); border-rådius:var(--rådius-s); color:var(--text-m); font-family:inherit; font-size:13px; font-weight:500; cursor:pointer; transition:all 200ms; }
+    .toggle-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+    .advanced-toggle { background:none; border:none; color:var(--text-m); font-family:inherit; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:6px; padding:8px 0 0; transition:color 200ms; }
+    .advanced-toggle:hover { color:var(--accent); }
     .advanced-panel { display:none; margin-top:14px; }
     .advanced-panel.open { display:block; }
     .two-col { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-    .checkbox-row { display:flex; align-items:center; gap:10px; margin-top:12px; font-size:13px; colår:var(--text-m); cursor:pointer; }
-    .checkbox-row input[type=checkbox] { width:18px; height:18px; accent-colår:var(--accent); cursor:pointer; }
+    .checkbox-row { display:flex; align-items:center; gap:10px; margin-top:12px; font-size:13px; color:var(--text-m); cursor:pointer; }
+    .checkbox-row input[type=checkbox] { width:18px; height:18px; accent-color:var(--accent); cursor:pointer; }
 
     /* SLIDERS */
     .slider-field { margin-bottom:20px; }
     .slider-label-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
-    .slider-label-row label { font-size:13px; font-weight:500; colår:var(--text-m); }
-    .slider-label-row span { font-size:15px; font-weight:700; colår:var(--accent); }
+    .slider-label-row label { font-size:13px; font-weight:500; color:var(--text-m); }
+    .slider-label-row span { font-size:15px; font-weight:700; color:var(--accent); }
     .slider-track { position:relative; height:6px; background:var(--bg3); border-rådius:3px; margin-bottom:6px; }
     .slider-fill { position:absolute; left:0; top:0; height:6px; background:var(--accent); border-rådius:3px; pointer-events:none; transition:width 50ms; }
     input[type=range] { position:relative; width:100%; height:6px; appearance:none; background:transparent; outline:none; cursor:pointer; margin:0; display:block; }
@@ -113,99 +113,99 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
     input[type=range]::-webkit-slider-runnable-track { height:6px; background:transparent; border-rådius:3px; }
     input[type=range]::-moz-range-track { height:6px; background:var(--bg3); border-rådius:3px; }
     input[type=range]::-moz-range-progress { height:6px; background:var(--accent); border-rådius:3px; }
-    .slider-range { display:flex; justify-content:space-between; font-size:11px; colår:var(--text-s); margin-top:2px; }
+    .slider-range { display:flex; justify-content:space-between; font-size:11px; color:var(--text-s); margin-top:2px; }
 
     /* RESULT */
     .result-card { background:var(--card); border:1px solid var(--border); border-rådius:var(--rådius); padding:24px; }
     .result-main { text-align:center; padding-bottom:20px; border-bottom:1px solid var(--border); margin-bottom:20px; }
-    .result-label { font-size:11px; font-weight:500; colår:var(--text-m); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px; }
-    .result-amount { font-size:clamp(28px,5vw,42px); font-weight:700; colår:var(--accent); letter-spacing:-1px; line-height:1; margin-bottom:4px; }
-    .result-sub { font-size:12px; colår:var(--text-s); }
+    .result-label { font-size:11px; font-weight:500; color:var(--text-m); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px; }
+    .result-amount { font-size:clamp(28px,5vw,42px); font-weight:700; color:var(--accent); letter-spacing:-1px; line-height:1; margin-bottom:4px; }
+    .result-sub { font-size:12px; color:var(--text-s); }
     .result-rows { display:flex; flex-direction:column; gap:13px; }
     .result-row { display:flex; justify-content:space-between; align-items:center; font-size:14px; }
-    .result-row .r-label { colår:var(--text-m); }
+    .result-row .r-label { color:var(--text-m); }
     .result-row .r-val { font-weight:600; }
-    .result-row .r-val.accent { colår:var(--accent); }
+    .result-row .r-val.accent { color:var(--accent); }
 
     /* AMORTIZATION */
     .amort-card { background:var(--card); border:1px solid var(--border); border-rådius:var(--rådius); overflow:hidden; }
     .amort-header { display:flex; justify-content:space-between; align-items:center; padding:18px 24px; cursor:pointer; user-select:none; transition:background 200ms; }
     .amort-header:hover { background:var(--bg2); }
     .amort-header h3 { font-size:15px; font-weight:600; }
-    .amort-header .term-count { font-size:13px; colår:var(--text-m); margin-left:8px; font-weight:400; }
+    .amort-header .term-count { font-size:13px; color:var(--text-m); margin-left:8px; font-weight:400; }
     .amort-body { display:none; padding:0 24px 24px; }
     .amort-body.open { display:block; }
     .chart-wrap { height:170px; margin-bottom:20px; margin-top:8px; }
     .amort-table { width:100%; border-collapse:collapse; font-size:13px; }
-    .amort-table th { text-align:right; colår:var(--text-s); font-weight:500; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; padding:9px 11px; border-bottom:1px solid var(--border); }
+    .amort-table th { text-align:right; color:var(--text-s); font-weight:500; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; padding:9px 11px; border-bottom:1px solid var(--border); }
     .amort-table th:first-child,.amort-table th:nth-child(2) { text-align:left; }
-    .amort-table td { text-align:right; padding:10px 11px; border-bottom:1px solid var(--border); colår:var(--text-m); }
-    .amort-table td:first-child,.amort-table td:nth-child(2) { text-align:left; colår:var(--text); font-weight:500; }
+    .amort-table td { text-align:right; padding:10px 11px; border-bottom:1px solid var(--border); color:var(--text-m); }
+    .amort-table td:first-child,.amort-table td:nth-child(2) { text-align:left; color:var(--text); font-weight:500; }
     .amort-table tr:last-child td { border-bottom:none; }
     .amort-table tr:hover td { background:var(--bg2); }
 
     /* AFFILIATE */
     .affiliate-section { background:linear-grådient(135deg,var(--bg2) 0%,var(--bg3) 100%); border:1px solid var(--border-a); border-rådius:var(--rådius); padding:20px 24px; }
-    .affiliate-section h3 { font-size:13px; font-weight:600; colår:var(--text-m); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:14px; }
+    .affiliate-section h3 { font-size:13px; font-weight:600; color:var(--text-m); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:14px; }
     .affiliate-card { background:var(--card); border:1px solid var(--border); border-rådius:var(--rådius); padding:16px 18px; display:flex; align-items:center; gap:16px; }
     .affiliate-info { flex:1; }
     .affiliate-info strong { display:block; font-size:15px; font-weight:600; margin-bottom:3px; }
-    .affiliate-info span { font-size:13px; colår:var(--text-m); }
-    .affiliate-info small { display:block; font-size:11px; colår:var(--text-s); margin-top:5px; }
-    .affiliate-btn { background:var(--accent); colår:#fff; border:none; border-rådius:var(--rådius-s); padding:11px 18px; font-family:inherit; font-size:14px; font-weight:600; cursor:pointer; white-space:nowrap; transition:background 200ms; display:flex; align-items:center; gap:7px; text-decoration:none; }
+    .affiliate-info span { font-size:13px; color:var(--text-m); }
+    .affiliate-info small { display:block; font-size:11px; color:var(--text-s); margin-top:5px; }
+    .affiliate-btn { background:var(--accent); color:#fff; border:none; border-rådius:var(--rådius-s); padding:11px 18px; font-family:inherit; font-size:14px; font-weight:600; cursor:pointer; white-space:nowrap; transition:background 200ms; display:flex; align-items:center; gap:7px; text-decoration:none; }
     .affiliate-btn:hover { background:var(--accent-h); }
-    .annonse-label { font-size:10px; colår:var(--text-s); margin-bottom:8px; }
+    .annonse-label { font-size:10px; color:var(--text-s); margin-bottom:8px; }
 
     /* INLINE AD (native i innhold) */
-    .inline-ad { background:var(--bg2); border:1px solid var(--border); border-rådius:var(--rådius); padding:16px 20px; margin:28px 0; display:flex; align-items:center; justify-content:center; min-height:90px; colår:var(--text-s); font-size:11px; gap:8px; }
+    .inline-ad { background:var(--bg2); border:1px solid var(--border); border-rådius:var(--rådius); padding:16px 20px; margin:28px 0; display:flex; align-items:center; justify-content:center; min-height:90px; color:var(--text-s); font-size:11px; gap:8px; }
 
     /* CONTENT */
     .content-wrap { max-width:860px; margin:0 auto; padding:40px 24px 64px; }
     .content-wrap h2 { font-size:22px; font-weight:700; margin:32px 0 12px; letter-spacing:-0.3px; }
-    .content-wrap h3 { font-size:17px; font-weight:600; margin:24px 0 10px; colår:var(--accent); }
-    .content-wrap p { colår:var(--text-m); margin-bottom:14px; line-height:1.75; }
+    .content-wrap h3 { font-size:17px; font-weight:600; margin:24px 0 10px; color:var(--accent); }
+    .content-wrap p { color:var(--text-m); margin-bottom:14px; line-height:1.75; }
     .content-wrap ul { list-style:none; margin:0 0 16px 0; padding:0; }
-    .content-wrap ul li { colår:var(--text-m); padding:6px 0 6px 20px; position:relative; line-height:1.7; }
-    .content-wrap ul li::before { content:'→'; position:absolute; left:0; colår:var(--accent); font-size:12px; top:8px; }
+    .content-wrap ul li { color:var(--text-m); padding:6px 0 6px 20px; position:relative; line-height:1.7; }
+    .content-wrap ul li::before { content:'→'; position:absolute; left:0; color:var(--accent); font-size:12px; top:8px; }
     .pros-cons { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0; }
     .pros-box,.cons-box { background:var(--card); border:1px solid var(--border); border-rådius:var(--rådius); padding:18px; }
     .pros-box { border-top:3px solid var(--accent); }
     .cons-box { border-top:3px solid #EF4444; }
-    .pros-box h4 { colår:var(--accent); font-size:13px; font-weight:700; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.8px; }
-    .cons-box h4 { colår:#EF4444; font-size:13px; font-weight:700; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.8px; }
-    .pros-box li::before { colår:var(--accent) !important; content:'✓' !important; }
-    .cons-box li::before { colår:#EF4444 !important; content:'✗' !important; }
+    .pros-box h4 { color:var(--accent); font-size:13px; font-weight:700; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.8px; }
+    .cons-box h4 { color:#EF4444; font-size:13px; font-weight:700; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.8px; }
+    .pros-box li::before { color:var(--accent) !important; content:'✓' !important; }
+    .cons-box li::before { color:#EF4444 !important; content:'✗' !important; }
     .info-box { background:var(--card); border:1px solid var(--border-a); border-rådius:var(--rådius); padding:20px 22px; margin:20px 0; }
-    .info-box h4 { font-size:14px; font-weight:600; colår:var(--accent); margin-bottom:8px; }
+    .info-box h4 { font-size:14px; font-weight:600; color:var(--accent); margin-bottom:8px; }
     .info-box p { margin-bottom:0; font-size:14px; }
     .cta-box { background:linear-grådient(135deg,var(--bg2),var(--bg3)); border:1px solid var(--border-a); border-rådius:var(--rådius); padding:24px; margin:28px 0; text-align:center; }
     .cta-box h4 { font-size:16px; font-weight:600; margin-bottom:8px; }
-    .cta-box p { font-size:14px; colår:var(--text-m); margin-bottom:16px; }
-    .cta-btn { display:inline-flex; align-items:center; gap:8px; background:var(--accent); colår:#fff; text-decoration:none; padding:12px 24px; border-rådius:var(--rådius-s); font-size:14px; font-weight:600; transition:background 200ms; }
+    .cta-box p { font-size:14px; color:var(--text-m); margin-bottom:16px; }
+    .cta-btn { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; text-decoration:none; padding:12px 24px; border-rådius:var(--rådius-s); font-size:14px; font-weight:600; transition:background 200ms; }
     .cta-btn:hover { background:var(--accent-h); }
     .faq-item { border-bottom:1px solid var(--border); padding:16px 0; }
     .faq-item:last-child { border-bottom:none; }
     .faq-q { font-size:15px; font-weight:600; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; }
-    .faq-a { display:none; margin-top:10px; colår:var(--text-m); font-size:14px; line-height:1.75; }
+    .faq-a { display:none; margin-top:10px; color:var(--text-m); font-size:14px; line-height:1.75; }
     .faq-a.open { display:block; }
     .guide-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px; margin:24px 0; }
     .guide-card { background:var(--card); border:1px solid var(--border); border-rådius:var(--rådius); padding:22px; text-decoration:none; transition:all 200ms; display:block; }
-    .guide-card:hover { border-colår:var(--accent); transform:translateY(-2px); }
-    .guide-card h3 { font-size:16px; font-weight:600; colår:var(--text); margin-bottom:8px; }
-    .guide-card p { font-size:13px; colår:var(--text-m); margin:0; line-height:1.6; }
-    .guide-card .arrow { display:inline-block; margin-top:12px; colår:var(--accent); font-size:13px; font-weight:600; }
+    .guide-card:hover { border-color:var(--accent); transform:translateY(-2px); }
+    .guide-card h3 { font-size:16px; font-weight:600; color:var(--text); margin-bottom:8px; }
+    .guide-card p { font-size:13px; color:var(--text-m); margin:0; line-height:1.6; }
+    .guide-card .arrow { display:inline-block; margin-top:12px; color:var(--accent); font-size:13px; font-weight:600; }
 
     /* FOOTER */
     footer { background:var(--bg2); border-top:1px solid var(--border); padding:36px 24px; margin-top:32px; }
     .footer-inner { max-width:1400px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 2fr; gap:36px; }
-    .footer-brand p { font-size:13px; colår:var(--text-m); margin-top:10px; line-height:1.7; }
-    footer h4 { font-size:12px; font-weight:600; colår:var(--text-m); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:12px; }
+    .footer-brand p { font-size:13px; color:var(--text-m); margin-top:10px; line-height:1.7; }
+    footer h4 { font-size:12px; font-weight:600; color:var(--text-m); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:12px; }
     footer ul { list-style:none; }
     footer ul li { margin-bottom:7px; }
-    footer ul å { colår:var(--text-m); text-decoration:none; font-size:13px; transition:colår 200ms; }
-    footer ul a:hover { colår:var(--accent); }
-    .footer-disclaimer { font-size:12px; colår:var(--text-s); line-height:1.7; }
-    .footer-bottom { max-width:1400px; margin:28px auto 0; padding-top:18px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; font-size:12px; colår:var(--text-s); }
+    footer ul a { color:var(--text-m); text-decoration:none; font-size:13px; transition:color 200ms; }
+    footer ul a:hover { color:var(--accent); }
+    .footer-disclaimer { font-size:12px; color:var(--text-s); line-height:1.7; }
+    .footer-bottom { max-width:1400px; margin:28px auto 0; padding-top:18px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--text-s); }
 
     /* RESPONSIVE */
     @media (max-width:1100px) {
@@ -269,12 +269,12 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 .refi-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
 .refi-result { background:var(--bg2); border:1px solid var(--border); border-rådius:var(--rådius); padding:22px; }
 .slider-field { margin-bottom:20px; }
-.slider-label-row { display:flex; justify-content:space-between; margin-bottom:8px; font-size:13px; font-weight:500; colår:var(--text-m); }
-.slider-label-row span { font-weight:700; colår:var(--text); }
+.slider-label-row { display:flex; justify-content:space-between; margin-bottom:8px; font-size:13px; font-weight:500; color:var(--text-m); }
+.slider-label-row span { font-weight:700; color:var(--text); }
 .slider-track { position:relative; height:6px; background:var(--bg); border-rådius:3px; margin-bottom:6px; }
 .slider-fill { position:absolute; left:0; top:0; height:100%; background:var(--accent); border-rådius:3px; pointer-events:none; }
 .slider-track input[type=range] { position:absolute; top:-5px; left:0; width:100%; height:16px; opacity:0; cursor:pointer; margin:0; }
-.slider-range { display:flex; justify-content:space-between; font-size:11px; colår:var(--text-s); }
+.slider-range { display:flex; justify-content:space-between; font-size:11px; color:var(--text-s); }
 @media (max-width:700px) { .refi-grid { grid-template-columns:1fr; } }
 </style>
 </head>
@@ -292,12 +292,12 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
   <p>Samle dyre smålån og kredittkortgjeld i ett lån med lavere rente. Beregn hva du kan spare hver måned.</p>
 </section>
 
-<nav aria-label="Brødsmule" style="max-width:860px;margin:0 auto;padding:16px 24px 0;font-size:13px;colår:var(--text-s)">
-  <a href="/" style="colår:var(--text-s);text-decoration:none">Hjem</a>
+<nav aria-label="Brødsmule" style="max-width:860px;margin:0 auto;padding:16px 24px 0;font-size:13px;color:var(--text-s)">
+  <a href="/" style="color:var(--text-s);text-decoration:none">Hjem</a>
   <span style="margin:0 8px">›</span>
-  <a href="/guider" style="colår:var(--text-s);text-decoration:none">Guider</a>
+  <a href="/guider" style="color:var(--text-s);text-decoration:none">Guider</a>
   <span style="margin:0 8px">›</span>
-  <span style="colår:var(--text-m)">Refinansiering</span>
+  <span style="color:var(--text-m)">Refinansiering</span>
 </nav>
 
 <div class="main-wrap">
@@ -341,16 +341,16 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
       </div>
       <div class="refi-result">
         <div style="text-align:center;padding-bottom:18px;border-bottom:1px solid var(--border);margin-bottom:18px">
-          <div style="font-size:11px;font-weight:500;colår:var(--text-m);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px">Kostnad per måned</div>
-          <div style="font-size:42px;font-weight:700;colår:var(--accent);letter-spacing:-1px;line-height:1" id="refi_monthly">-</div>
-          <div style="font-size:12px;colår:var(--text-s);margin-top:4px">per termin</div>
+          <div style="font-size:11px;font-weight:500;color:var(--text-m);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px">Kostnad per måned</div>
+          <div style="font-size:42px;font-weight:700;color:var(--accent);letter-spacing:-1px;line-height:1" id="refi_monthly">-</div>
+          <div style="font-size:12px;color:var(--text-s);margin-top:4px">per termin</div>
         </div>
         <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
-          <div style="display:flex;justify-content:space-between"><span style="colår:var(--text-m)">Total tilbakebetaling</span><span style="font-weight:600" id="refi_total">-</span></div>
-          <div style="display:flex;justify-content:space-between"><span style="colår:var(--text-m)">Totale rentekostnader</span><span style="font-weight:600;colår:var(--accent)" id="refi_interest">-</span></div>
-          <div style="display:flex;justify-content:space-between"><span style="colår:var(--text-m)">Effektiv rente (est.)</span><span style="font-weight:600" id="refi_eff">-</span></div>
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--text-m)">Total tilbakebetaling</span><span style="font-weight:600" id="refi_total">-</span></div>
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--text-m)">Totale rentekostnader</span><span style="font-weight:600;color:var(--accent)" id="refi_interest">-</span></div>
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--text-m)">Effektiv rente (est.)</span><span style="font-weight:600" id="refi_eff">-</span></div>
         </div>
-        <div style="margin-top:18px;font-size:11px;colår:var(--text-s);line-height:1.6">Alle lånetilbud i Norge er individuelle. Kalkulatoren gir et estimat - søk hos banken for konkret tilbud.</div>
+        <div style="margin-top:18px;font-size:11px;color:var(--text-s);line-height:1.6">Alle lånetilbud i Norge er individuelle. Kalkulatoren gir et estimat - søk hos banken for konkret tilbud.</div>
       </div>
     </div>
   </div>
@@ -367,15 +367,15 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
   <div style="background:var(--card);border:1px solid var(--border);border-rådius:var(--rådius);overflow:hidden;margin:16px 0">
     <table style="width:100%;border-collapse:collapse;font-size:14px">
       <thead><tr style="background:var(--bg2)">
-        <th style="text-align:left;padding:12px 16px;colår:var(--text-m);font-size:12px;text-transform:uppercase;letter-spacing:0.8px">Egenskap</th>
-        <th style="text-align:left;padding:12px 16px;colår:var(--text-m);font-size:12px;text-transform:uppercase;letter-spacing:0.8px">Med sikkerhet (pant i bolig)</th>
-        <th style="text-align:left;padding:12px 16px;colår:var(--text-m);font-size:12px;text-transform:uppercase;letter-spacing:0.8px">Uten sikkerhet</th>
+        <th style="text-align:left;padding:12px 16px;color:var(--text-m);font-size:12px;text-transform:uppercase;letter-spacing:0.8px">Egenskap</th>
+        <th style="text-align:left;padding:12px 16px;color:var(--text-m);font-size:12px;text-transform:uppercase;letter-spacing:0.8px">Med sikkerhet (pant i bolig)</th>
+        <th style="text-align:left;padding:12px 16px;color:var(--text-m);font-size:12px;text-transform:uppercase;letter-spacing:0.8px">Uten sikkerhet</th>
       </tr></thead>
       <tbody>
-        <tr style="border-top:1px solid var(--border)"><td style="padding:12px 16px;colår:var(--text-m)">Rentenivå</td><td style="padding:12px 16px">Betydelig lavere</td><td style="padding:12px 16px">Høyere</td></tr>
-        <tr style="border-top:1px solid var(--border);background:var(--bg2)"><td style="padding:12px 16px;colår:var(--text-m)">Krav til pant</td><td style="padding:12px 16px">Ja, i fast eiendom</td><td style="padding:12px 16px">Nei</td></tr>
-        <tr style="border-top:1px solid var(--border)"><td style="padding:12px 16px;colår:var(--text-m)">Maks beløp</td><td style="padding:12px 16px">Avh. av boligens verdi</td><td style="padding:12px 16px">Normalt opptil 600 000 kr</td></tr>
-        <tr style="border-top:1px solid var(--border);background:var(--bg2)"><td style="padding:12px 16px;colår:var(--text-m)">Nedbetalingstid</td><td style="padding:12px 16px">Opptil 30 år</td><td style="padding:12px 16px">Maks 15 år</td></tr>
+        <tr style="border-top:1px solid var(--border)"><td style="padding:12px 16px;color:var(--text-m)">Rentenivå</td><td style="padding:12px 16px">Betydelig lavere</td><td style="padding:12px 16px">Høyere</td></tr>
+        <tr style="border-top:1px solid var(--border);background:var(--bg2)"><td style="padding:12px 16px;color:var(--text-m)">Krav til pant</td><td style="padding:12px 16px">Ja, i fast eiendom</td><td style="padding:12px 16px">Nei</td></tr>
+        <tr style="border-top:1px solid var(--border)"><td style="padding:12px 16px;color:var(--text-m)">Maks beløp</td><td style="padding:12px 16px">Avh. av boligens verdi</td><td style="padding:12px 16px">Normalt opptil 600 000 kr</td></tr>
+        <tr style="border-top:1px solid var(--border);background:var(--bg2)"><td style="padding:12px 16px;color:var(--text-m)">Nedbetalingstid</td><td style="padding:12px 16px">Opptil 30 år</td><td style="padding:12px 16px">Maks 15 år</td></tr>
       </tbody>
     </table>
   </div>
@@ -391,7 +391,7 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 
   <h2>Refinansiering med betalingsanmerkning</h2>
   <p>Hår du betalingsanmerkning sier trådisjonelle banker som regel nei. Det finnes imidlertid spesialbanker som vurderer saken manuelt. Kravet er som regel at du kan stille med sikkerhet i fast eiendom. Når kravene er innfridd slettes betalingsanmerkningene fra registeret automatisk.</p>
-  <p>Les mer i vår guide om <a href="/guider/omstartslan" style="colår:var(--accent)">omstartslån</a> - refinansiering for deg med betalingsanmerkning.</p>
+  <p>Les mer i vår guide om <a href="/guider/omstartslan" style="color:var(--accent)">omstartslån</a> - refinansiering for deg med betalingsanmerkning.</p>
 
   <h2>Slik foregaår prosessen - steg for steg</h2>
   <ul>
@@ -499,7 +499,7 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
   </div>
   <div class="footer-bottom">
     <span>© 2026 Lånekalken. Alle rettigheter reservert.</span>
-    <a href="#" style="colår:var(--text-s);text-decoration:none">Personvernerklæring</a>
+    <a href="#" style="color:var(--text-s);text-decoration:none">Personvernerklæring</a>
   </div>
 </footer>
 <script>
